@@ -1,1 +1,844 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>クランブル徹底攻略 | クッキーラン：クランブル攻略サイト</title>
+
+    <meta name="description"
+          content="クッキーラン：クランブルの最新攻略情報、PVPキャラランク、キャラクター評価、最強編成を掲載する攻略サイトです。">
+
+    <link rel="stylesheet" href="ranking.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Hiragino Kaku Gothic ProN",
+                "Yu Gothic",
+                sans-serif;
+
+            background: #f5f6f8;
+            color: #222;
+        }
+
+
+        /* =====================
+           ヘッダー
+        ===================== */
+
+        header {
+            background: white;
+
+            border-bottom: 1px solid #e5e5e5;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 18px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: #222;
+
+            text-decoration: none;
+
+            font-size: 21px;
+
+            font-weight: 900;
+        }
+
+        nav {
+            display: flex;
+
+            gap: 24px;
+        }
+
+        nav a {
+            color: #555;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ef6c1b;
+        }
+
+
+        /* =====================
+           ヒーロー
+        ===================== */
+
+        .hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff1df,
+                    #ffffff
+                );
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .hero-inner {
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 75px 20px;
+
+            text-align: center;
+        }
+
+        .hero-icon {
+            font-size: 70px;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: #ef6c1b;
+        }
+
+        .hero p {
+            color: #666;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+        .hero-button {
+            display: inline-block;
+
+            margin-top: 28px;
+
+            padding: 14px 28px;
+
+            background: #ef6c1b;
+
+            color: white;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 5px 15px rgba(239,108,27,.2);
+        }
+
+        .hero-button:hover {
+            opacity: .9;
+        }
+
+
+        /* =====================
+           メイン
+        ===================== */
+
+        main {
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 45px 20px 80px;
+        }
+
+
+        .section-title {
+            margin-bottom: 18px;
+        }
+
+        .section-title h2 {
+            font-size: 25px;
+        }
+
+        .section-title p {
+            color: #888;
+
+            font-size: 12px;
+
+            margin-top: 5px;
+        }
+
+
+        /* =====================
+           メニュー
+        ===================== */
+
+        .menu-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 45px;
+        }
+
+        .menu-card {
+            background: white;
+
+            border: 1px solid #e5e5e5;
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            text-decoration: none;
+
+            color: #222;
+
+            transition: .2s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,.08);
+        }
+
+        .menu-icon {
+            font-size: 35px;
+
+            margin-bottom: 12px;
+        }
+
+        .menu-card h3 {
+            font-size: 17px;
+
+            margin-bottom: 7px;
+        }
+
+        .menu-card p {
+            color: #888;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================
+           PVPおすすめ
+        ===================== */
+
+        .pvp-box {
+            background: white;
+
+            border: 1px solid #e5e5e5;
+
+            border-radius: 10px;
+
+            padding: 28px;
+
+            margin-bottom: 45px;
+        }
+
+        .pvp-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .pvp-header h2 {
+            font-size: 22px;
+        }
+
+        .pvp-link {
+            color: #ef6c1b;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+        .pvp-character {
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 18px;
+
+            background: #fff7ed;
+
+            border-radius: 8px;
+        }
+
+        .pvp-character-icon {
+            width: 90px;
+            height: 90px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: white;
+
+            border-radius: 8px;
+
+            font-size: 55px;
+        }
+
+        .pvp-character h3 {
+            margin-bottom: 5px;
+        }
+
+        .ss-badge {
+            display: inline-block;
+
+            padding: 5px 9px;
+
+            margin-right: 6px;
+
+            background: #d94141;
+
+            color: white;
+
+            border-radius: 4px;
+
+            font-size: 11px;
+
+            font-weight: 900;
+        }
+
+        .pvp-character p {
+            color: #777;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================
+           お知らせ
+        ===================== */
+
+        .news {
+            background: white;
+
+            border: 1px solid #e5e5e5;
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            margin-bottom: 45px;
+        }
+
+        .news-item {
+            display: flex;
+
+            gap: 18px;
+
+            padding: 14px 0;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            color: #999;
+
+            font-size: 11px;
+
+            white-space: nowrap;
+        }
+
+        .news-text {
+            font-size: 13px;
+        }
+
+
+        /* =====================
+           フッター
+        ===================== */
+
+        footer {
+            background: #202020;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 45px 20px;
+        }
+
+        footer h2 {
+            font-size: 19px;
+
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #999;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================
+           スマホ
+        ===================== */
+
+        @media (max-width: 700px) {
+
+            .header-inner {
+                flex-direction: column;
+
+                gap: 14px;
+            }
+
+            nav {
+                width: 100%;
+
+                overflow-x: auto;
+
+                white-space: nowrap;
+
+                gap: 18px;
+            }
+
+            .hero-inner {
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pvp-character {
+                padding: 15px;
+            }
+
+            .news-item {
+                flex-direction: column;
+
+                gap: 5px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================
+     ヘッダー
+===================== -->
+
+<header>
+
+    <div class="header-inner">
+
+        <a href="index.html"
+           class="logo">
+
+            🍪 クランブル徹底攻略
+
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                ホーム
+            </a>
+
+            <a href="ranking.html">
+                PVPキャラランク
+            </a>
+
+            <a href="#">
+                最強編成
+            </a>
+
+            <a href="#">
+                キャラクター
+            </a>
+
+            <a href="#">
+                攻略情報
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================
+     ヒーロー
+===================== -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-icon">
+            🍪
+        </div>
+
+        <h1>
+            <span>クランブル</span>徹底攻略
+        </h1>
+
+        <p>
+            クッキーラン：クランブルを
+            とことん攻略！<br>
+            PVPキャラランクや最強編成、
+            キャラクター評価を掲載中。
+        </p>
+
+        <a
+            href="ranking.html"
+            class="hero-button">
+
+            🏆 PVPキャラランクを見る
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<main>
+
+
+    <!-- =====================
+         攻略メニュー
+    ===================== -->
+
+    <div class="section-title">
+
+        <h2>
+            攻略メニュー
+        </h2>
+
+        <p>
+            クランブル攻略に役立つ情報
+        </p>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+
+        <a
+            href="ranking.html"
+            class="menu-card">
+
+            <div class="menu-icon">
+                🏆
+            </div>
+
+            <h3>
+                PVPキャラランク
+            </h3>
+
+            <p>
+                PVPで活躍するキャラクターを
+                SS〜Bランクで評価。
+            </p>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="menu-card">
+
+            <div class="menu-icon">
+                ⚔️
+            </div>
+
+            <h3>
+                最強編成
+            </h3>
+
+            <p>
+                PVPでおすすめの編成や
+                組み合わせを紹介。
+            </p>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="menu-card">
+
+            <div class="menu-icon">
+                🍪
+            </div>
+
+            <h3>
+                キャラクター一覧
+            </h3>
+
+            <p>
+                クランブルのキャラクターを
+                一覧でチェック。
+            </p>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="menu-card">
+
+            <div class="menu-icon">
+                📖
+            </div>
+
+            <h3>
+                キャラ攻略
+            </h3>
+
+            <p>
+                キャラクターごとの性能や
+                使い方を徹底解説。
+            </p>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="menu-card">
+
+            <div class="menu-icon">
+                📰
+            </div>
+
+            <h3>
+                最新情報
+            </h3>
+
+            <p>
+                アップデートや環境変化などの
+                最新情報を掲載。
+            </p>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="menu-card">
+
+            <div class="menu-icon">
+                💡
+            </div>
+
+            <h3>
+                初心者攻略
+            </h3>
+
+            <p>
+                初心者向けに序盤の進め方や
+                育成方法を解説。
+            </p>
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- =====================
+         PVP注目キャラ
+    ===================== -->
+
+    <div class="pvp-box">
+
+        <div class="pvp-header">
+
+            <h2>
+                🏆 PVP注目キャラクター
+            </h2>
+
+            <a
+                href="ranking.html"
+                class="pvp-link">
+
+                ランク一覧を見る →
+
+            </a>
+
+        </div>
+
+
+        <div class="pvp-character">
+
+
+            <div class="pvp-character-icon">
+
+                🏹
+
+            </div>
+
+
+            <div>
+
+                <h3>
+
+                    <span class="ss-badge">
+                        SS
+                    </span>
+
+                    ウインドアーチャークッキー
+
+                </h3>
+
+                <p>
+                    現在のPVPキャラランクで
+                    SSランクに評価。
+                    遠距離からの攻撃で活躍する注目キャラクター。
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================
+         お知らせ
+    ===================== -->
+
+    <div class="section-title">
+
+        <h2>
+            📢 更新情報
+        </h2>
+
+    </div>
+
+
+    <div class="news">
+
+
+        <div class="news-item">
+
+            <span class="news-date">
+                2026.08.12
+            </span>
+
+            <span class="news-text">
+                PVPキャラランクページを公開しました。
+            </span>
+
+        </div>
+
+
+        <div class="news-item">
+
+            <span class="news-date">
+                2026.08.12
+            </span>
+
+            <span class="news-text">
+                「クランブル徹底攻略」サイトを公開しました。
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================
+     フッター
+===================== -->
+
+<footer>
+
+    <h2>
+        🍪 クランブル徹底攻略
+    </h2>
+
+    <p>
+        クッキーラン：クランブル攻略情報サイト
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```
 
