@@ -1,10 +1,18 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>クランブル徹底攻略</title>
+
 
 <style>
 
@@ -18,51 +26,37 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
 
   font-family:
     -apple-system,
     BlinkMacSystemFont,
     "Noto Sans JP",
+    "Yu Gothic",
     sans-serif;
 
-  color: white;
-
-  min-height: 100vh;
+  color: #24445a;
 
   background:
-
-    radial-gradient(
-      circle at 15% 20%,
-      #754cff55,
-      transparent 30%
-    ),
-
-    radial-gradient(
-      circle at 85% 25%,
-      #00d9ff35,
-      transparent 30%
-    ),
-
-    radial-gradient(
-      circle at 50% 80%,
-      #ff4dbb25,
-      transparent 35%
-    ),
-
     linear-gradient(
-      135deg,
-      #060817,
-      #111a3d,
-      #080b20
+      180deg,
+      #e9fbff 0%,
+      #d7f5fb 45%,
+      #c9eef6 100%
     );
+
+  min-height: 100vh;
 
   overflow-x: hidden;
 }
 
 
 /* =========================
-   背景の光
+   背景のキラキラ
 ========================= */
 
 body::before {
@@ -79,27 +73,15 @@ body::before {
 
     radial-gradient(
       circle,
-      #ffffffaa 1px,
-      transparent 1px
+      rgba(255,255,255,.9) 1px,
+      transparent 2px
     );
 
   background-size: 55px 55px;
 
-  opacity: .18;
+  opacity: .35;
 
-}
-
-
-/* =========================
-   共通
-========================= */
-
-.container {
-
-  width: min(1100px, 92%);
-
-  margin: auto;
-
+  z-index: -1;
 }
 
 
@@ -113,351 +95,449 @@ header {
 
   top: 0;
 
-  z-index: 100;
-
-  padding: 18px 0;
+  z-index: 1000;
 
   background:
-    rgba(5, 7, 23, .78);
+    rgba(255,255,255,.88);
 
-  backdrop-filter: blur(15px);
+  backdrop-filter:
+    blur(15px);
 
   border-bottom:
-    1px solid #ffffff15;
+    1px solid #a8dce8;
+
+  box-shadow:
+    0 4px 20px rgba(51,150,175,.12);
 
 }
 
 
-.nav {
+.header-inner {
 
-  display: flex;
+  width:
+    min(1200px,94%);
 
-  justify-content:
-    space-between;
+  margin:
+    auto;
+
+  min-height:
+    72px;
+
+  display:
+    flex;
 
   align-items:
     center;
 
+  justify-content:
+    space-between;
+
+  gap:
+    20px;
+
 }
 
 
+/* ロゴ */
+
 .logo {
 
-  font-size: 22px;
+  text-decoration:
+    none;
 
-  font-weight: 900;
+  color:
+    #167a9a;
+
+  font-size:
+    22px;
+
+  font-weight:
+    900;
+
+  white-space:
+    nowrap;
 
 }
 
 
 .logo span {
 
-  color: #8c7cff;
-
-}
-
-
-nav a {
-
-  color: #cdd4ff;
-
-  text-decoration: none;
-
-  margin-left: 22px;
-
-  font-size: 14px;
-
-  transition: .2s;
-
-}
-
-
-nav a:hover {
-
-  color: white;
+  color:
+    #45b9d4;
 
 }
 
 
 /* =========================
-   ヒーロー
+   ナビゲーション
+========================= */
+
+.main-nav {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    6px;
+
+  overflow-x:
+    auto;
+
+}
+
+
+.main-nav a {
+
+  text-decoration:
+    none;
+
+  color:
+    #416477;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+
+  padding:
+    11px 13px;
+
+  border-radius:
+    12px;
+
+  transition:
+    .2s;
+
+}
+
+
+.main-nav a:hover {
+
+  color:
+    #087c9f;
+
+  background:
+    #d8f5fa;
+
+}
+
+
+/* トップページ */
+
+.main-nav .home {
+
+  color:
+    white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55c8df,
+      #3aa5c4
+    );
+
+  box-shadow:
+    0 5px 15px
+    rgba(42,160,190,.22);
+
+}
+
+
+/* =========================
+   メインビジュアル
 ========================= */
 
 .hero {
 
-  position: relative;
-
-  text-align: center;
-
-  padding:
-    100px 20px 80px;
-
-}
-
-
-.hero-badge {
-
-  display: inline-block;
-
-  padding:
-    8px 17px;
-
-  margin-bottom: 20px;
-
-  border-radius: 999px;
-
-  background:
-    #8d7aff22;
-
-  border:
-    1px solid #a496ff55;
-
-  color:
-    #d7d0ff;
-
-  font-size: 13px;
-
-}
-
-
-.hero h1 {
-
-  font-size:
-    clamp(45px, 9vw, 82px);
-
-  font-weight: 1000;
-
-  line-height: 1.05;
-
-}
-
-
-.gradient {
-
-  background:
-
-    linear-gradient(
-      90deg,
-      #ffffff,
-      #b7a8ff,
-      #65eaff
-    );
-
-  -webkit-background-clip: text;
-
-  color: transparent;
-
-}
-
-
-.hero p {
-
-  max-width: 680px;
+  width:
+    min(1200px,94%);
 
   margin:
-    25px auto;
+    auto;
 
-  color:
-    #aeb8dc;
-
-  line-height: 1.9;
+  padding:
+    50px 0 35px;
 
 }
 
 
-/* =========================
-   メインボタン
-========================= */
+.hero-box {
 
-.hero-buttons {
+  position:
+    relative;
 
-  display: flex;
+  min-height:
+    500px;
+
+  border-radius:
+    35px;
+
+  overflow:
+    hidden;
+
+  display:
+    flex;
+
+  align-items:
+    center;
 
   justify-content:
     center;
 
-  gap: 12px;
-
-  flex-wrap: wrap;
-
-  margin-top: 30px;
-
-}
-
-
-.button {
-
-  display: inline-block;
-
-  padding:
-    14px 24px;
-
-  border-radius: 14px;
-
-  text-decoration: none;
-
-  font-weight: 800;
-
-  transition: .25s;
-
-}
-
-
-.button-main {
-
-  color: white;
+  text-align:
+    center;
 
   background:
+
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255,255,255,.95),
+      transparent 38%
+    ),
 
     linear-gradient(
       135deg,
-      #806cff,
-      #4c9cff
+      #bceff8,
+      #8ed9e9,
+      #c7f4fa
     );
 
+  border:
+    1px solid
+    rgba(255,255,255,.9);
+
   box-shadow:
-    0 10px 35px #6354ff44;
+    0 25px 60px
+    rgba(47,151,177,.22);
 
 }
 
 
-.button-sub {
+/* 装飾 */
+
+.hero-box::before {
+
+  content:
+    "✦  ✧  ✦  ✧  ✦";
+
+  position:
+    absolute;
+
+  top:
+    30px;
+
+  left:
+    0;
+
+  right:
+    0;
 
   color:
-    #d9ddff;
+    rgba(255,255,255,.8);
 
-  background:
-    #ffffff09;
+  font-size:
+    22px;
 
-  border:
-    1px solid #ffffff18;
+  letter-spacing:
+    20px;
 
 }
 
 
-.button:hover {
+.hero-box::after {
 
-  transform:
-    translateY(-4px);
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    420px;
+
+  height:
+    420px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255,255,255,.28);
+
+  right:
+    -180px;
+
+  bottom:
+    -190px;
 
 }
 
 
 /* =========================
-   セクション
+   メイン画像
 ========================= */
 
-.section {
+.main-image {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  z-index:
+    1;
+
+}
+
+
+/*
+  ↓↓↓ ここにメイン画像を入れる ↓↓↓
+*/
+
+.main-image img {
+
+  width:
+    min(100%,850px);
+
+  max-height:
+    480px;
+
+  object-fit:
+    contain;
+
+  filter:
+    drop-shadow(
+      0 20px 25px
+      rgba(26,112,140,.25)
+    );
+
+}
+
+
+/* 画像がまだない場合 */
+
+.image-placeholder {
+
+  width:
+    min(80%,700px);
 
   padding:
-    35px 0;
+    100px 20px;
+
+  border-radius:
+    25px;
+
+  border:
+    2px dashed
+    rgba(35,135,160,.35);
+
+  background:
+    rgba(255,255,255,.35);
+
+  color:
+    #378ba4;
+
+  font-weight:
+    800;
+
+}
+
+
+/* =========================
+   メインタイトル
+========================= */
+
+.hero-content {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  padding:
+    30px;
+
+}
+
+
+.hero-content h1 {
+
+  font-size:
+    clamp(40px,8vw,78px);
+
+  font-weight:
+    1000;
+
+  color:
+    white;
+
+  text-shadow:
+    0 4px 18px
+    rgba(38,120,145,.35);
+
+}
+
+
+.hero-content p {
+
+  margin-top:
+    15px;
+
+  color:
+    #31738a;
+
+  font-size:
+    15px;
+
+  font-weight:
+    700;
+
+}
+
+
+/* =========================
+   更新情報
+========================= */
+
+.news-section {
+
+  width:
+    min(1000px,92%);
+
+  margin:
+    20px auto 45px;
 
 }
 
 
 .section-title {
 
-  display: flex;
+  display:
+    flex;
 
   justify-content:
     space-between;
 
   align-items:
-    end;
-
-  margin-bottom:
-    18px;
-
-}
-
-
-.section-title h2 {
-
-  font-size: 28px;
-
-}
-
-
-.section-title p {
-
-  color:
-    #747fa5;
-
-  font-size:
-    12px;
-
-}
-
-
-/* =========================
-   メニューカード
-========================= */
-
-.menu-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(240px, 1fr)
-    );
-
-  gap: 16px;
-
-}
-
-
-.menu-card {
-
-  position: relative;
-
-  overflow: hidden;
-
-  padding: 25px;
-
-  min-height: 170px;
-
-  border-radius: 22px;
-
-  background:
-
-    linear-gradient(
-      145deg,
-      #ffffff12,
-      #ffffff04
-    );
-
-  border:
-    1px solid #ffffff15;
-
-  text-decoration: none;
-
-  color: white;
-
-  transition: .25s;
-
-}
-
-
-.menu-card:hover {
-
-  transform:
-    translateY(-7px);
-
-  border-color:
-    #9586ff88;
-
-  box-shadow:
-    0 20px 50px #4e3dbb33;
-
-}
-
-
-.menu-icon {
-
-  font-size:
-    34px;
+    center;
 
   margin-bottom:
     15px;
@@ -465,133 +545,45 @@ nav a:hover {
 }
 
 
-.menu-card h3 {
-
-  font-size:
-    20px;
-
-  margin-bottom:
-    8px;
-
-}
-
-
-.menu-card p {
-
-  color:
-    #929cbe;
-
-  font-size:
-    13px;
-
-  line-height:
-    1.7;
-
-}
-
-
-/* =========================
-   注目キャラ
-========================= */
-
-.feature {
-
-  display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap: 20px;
-
-}
-
-
-.feature-card {
-
-  padding: 25px;
-
-  border-radius: 22px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffbf2b16,
-      #ffffff05
-    );
-
-  border:
-    1px solid #ffcc4a30;
-
-}
-
-
-.feature-rank {
-
-  color:
-    #ffd45a;
-
-  font-size:
-    13px;
-
-  font-weight:
-    900;
-
-}
-
-
-.feature-card h3 {
+.section-title h2 {
 
   font-size:
     25px;
 
-  margin:
-    10px 0;
-
-}
-
-
-.feature-card p {
-
   color:
-    #aab3d0;
-
-  line-height:
-    1.7;
+    #176f8b;
 
 }
 
 
-.score {
-
-  margin-top:
-    18px;
+.section-title span {
 
   font-size:
-    24px;
-
-  font-weight:
-    900;
+    12px;
 
   color:
-    #c7bcff;
+    #6b9aaa;
 
 }
 
 
-/* =========================
-   最新情報
-========================= */
+.news-list {
 
-.news {
+  background:
+    rgba(255,255,255,.78);
 
-  display:
-    flex;
+  border:
+    1px solid #b8e3eb;
 
-  flex-direction:
-    column;
+  border-radius:
+    20px;
 
-  gap:
-    10px;
+  overflow:
+    hidden;
+
+  box-shadow:
+    0 12px 35px
+    rgba(56,150,170,.1);
 
 }
 
@@ -605,19 +597,21 @@ nav a:hover {
     center;
 
   gap:
-    15px;
+    18px;
 
   padding:
-    16px;
+    16px 20px;
 
-  border-radius:
-    15px;
+  border-bottom:
+    1px solid #d7edf1;
 
-  background:
-    #ffffff07;
+}
 
-  border:
-    1px solid #ffffff0e;
+
+.news-item:last-child {
+
+  border-bottom:
+    none;
 
 }
 
@@ -625,13 +619,13 @@ nav a:hover {
 .news-date {
 
   color:
-    #7782a6;
+    #50a7bf;
 
   font-size:
     12px;
 
-  min-width:
-    90px;
+  font-weight:
+    800;
 
 }
 
@@ -639,10 +633,132 @@ nav a:hover {
 .news-text {
 
   color:
-    #dce1ff;
+    #416477;
 
   font-size:
     14px;
+
+}
+
+
+/* =========================
+   コンテンツカード
+========================= */
+
+.contents {
+
+  width:
+    min(1100px,92%);
+
+  margin:
+    auto;
+
+  padding-bottom:
+    50px;
+
+}
+
+
+.contents-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap:
+    18px;
+
+}
+
+
+.content-card {
+
+  display:
+    block;
+
+  text-decoration:
+    none;
+
+  padding:
+    25px;
+
+  min-height:
+    180px;
+
+  border-radius:
+    23px;
+
+  background:
+    rgba(255,255,255,.82);
+
+  border:
+    1px solid #b8e3eb;
+
+  box-shadow:
+    0 12px 30px
+    rgba(52,145,167,.1);
+
+  transition:
+    .25s;
+
+}
+
+
+.content-card:hover {
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 18px 38px
+    rgba(52,145,167,.18);
+
+  border-color:
+    #70c8da;
+
+}
+
+
+.card-icon {
+
+  font-size:
+    34px;
+
+  margin-bottom:
+    14px;
+
+}
+
+
+.content-card h3 {
+
+  color:
+    #19718d;
+
+  font-size:
+    19px;
+
+  margin-bottom:
+    8px;
+
+}
+
+
+.content-card p {
+
+  color:
+    #648494;
+
+  font-size:
+    13px;
+
+  line-height:
+    1.7;
 
 }
 
@@ -653,14 +769,20 @@ nav a:hover {
 
 footer {
 
+  padding:
+    45px 20px;
+
   text-align:
     center;
 
-  padding:
-    60px 0 35px;
+  background:
+    rgba(255,255,255,.7);
+
+  border-top:
+    1px solid #b8e3eb;
 
   color:
-    #687394;
+    #6c919f;
 
   font-size:
     12px;
@@ -672,12 +794,34 @@ footer {
    スマホ
 ========================= */
 
-@media(max-width:700px) {
+@media(max-width:850px) {
 
-  nav {
+  .header-inner {
 
-    display:
-      none;
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    padding:
+      12px 0;
+
+  }
+
+
+  .logo {
+
+    text-align:
+      center;
+
+  }
+
+
+  .main-nav {
+
+    justify-content:
+      flex-start;
 
   }
 
@@ -685,12 +829,32 @@ footer {
   .hero {
 
     padding-top:
-      65px;
+      25px;
 
   }
 
 
-  .feature {
+  .hero-box {
+
+    min-height:
+      400px;
+
+  }
+
+
+  .contents-grid {
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+}
+
+
+@media(max-width:550px) {
+
+  .contents-grid {
 
     grid-template-columns:
       1fr;
@@ -698,16 +862,38 @@ footer {
   }
 
 
-  .news-item {
+  .hero-box {
 
-    align-items:
-      flex-start;
+    min-height:
+      360px;
+
+    border-radius:
+      25px;
+
+  }
+
+
+  .news-item {
 
     flex-direction:
       column;
 
+    align-items:
+      flex-start;
+
     gap:
       5px;
+
+  }
+
+
+  .main-nav a {
+
+    font-size:
+      12px;
+
+    padding:
+      9px 10px;
 
   }
 
@@ -722,336 +908,160 @@ footer {
 
 
 <!-- =========================
-     ヘッダー
+     上部ナビ
 ========================= -->
 
 <header>
 
-<div class="container nav">
-
-  <div class="logo">
-
-    🍪 クランブル
-    <span>徹底攻略</span>
-
-  </div>
+<div class="header-inner">
 
 
-  <nav>
+<a
+  href="index.html"
+  class="logo"
+>
 
-    <a href="index.html">
-      ホーム
-    </a>
+  🍪 クランブル
+  <span>徹底攻略</span>
 
-    <a href="ranking.html">
-      キャラランク
-    </a>
+</a>
 
-    <a href="#">
-      攻略情報
-    </a>
 
-    <a href="#">
-      最新情報
-    </a>
+<nav class="main-nav">
 
-  </nav>
+
+<a
+  href="index.html"
+  class="home"
+>
+  🏠 トップページに戻る
+</a>
+
+
+<a href="#news">
+  📰 更新情報
+</a>
+
+
+<a href="ranking.html">
+  👑 クッキーランキング
+</a>
+
+
+<a href="#characters">
+  🍪 クッキー個別紹介
+</a>
+
+
+<a href="#arena">
+  ⚔️ アリーナ攻略
+</a>
+
+
+<a href="#stage">
+  🗺️ メインステージ攻略
+</a>
+
+
+</nav>
 
 </div>
 
 </header>
 
 
+
 <!-- =========================
-     メイン
+     メインビジュアル
 ========================= -->
-
-<main>
-
 
 <section class="hero">
 
-  <div class="hero-badge">
+<div class="hero-box">
 
-    ⚡ CRUMBLE攻略サイト
+
+<!--
+==================================================
+★ メイン画像を入れる場所 ★
+
+画像を用意したら、
+
+<div class="image-placeholder">
+  メイン画像
+</div>
+
+を消して、
+
+<img src="images/main.png"
+     alt="クランブル徹底攻略">
+
+に変更してください。
+==================================================
+-->
+
+
+<div class="main-image">
+
+  <div class="image-placeholder">
+
+    🖼️ ここに
+    「クランブル徹底攻略」の
+    メイン画像を配置
 
   </div>
 
+</div>
+
+
+<div class="hero-content">
 
   <h1>
 
-    <span class="gradient">
-
-      クランブル<br>
-      徹底攻略
-
-    </span>
+    クランブル<br>
+    徹底攻略
 
   </h1>
 
-
   <p>
 
-    キャラクターランキングから
-    最新攻略情報まで徹底解説！<br>
-
-    クランブルをもっと楽しむための
-    非公式攻略サイト。
+    クッキーラン クランブルを
+    とことん攻略！
 
   </p>
 
-
-  <div class="hero-buttons">
-
-    <a
-      href="ranking.html"
-      class="button button-main"
-    >
-
-      👑 キャラランクを見る
-
-    </a>
+</div>
 
 
-    <a
-      href="#menu"
-      class="button button-sub"
-    >
-
-      📖 攻略情報を見る
-
-    </a>
-
-  </div>
+</div>
 
 </section>
 
 
 
 <!-- =========================
-     メニュー
+     更新情報
 ========================= -->
 
 <section
-  class="section"
-  id="menu"
+  class="news-section"
+  id="news"
 >
-
-<div class="container">
 
 
 <div class="section-title">
 
   <h2>
-    🔥 攻略コンテンツ
+    📰 更新情報
   </h2>
 
-  <p>
-    CRUMBLE GUIDE
-  </p>
+  <span>
+    UPDATE
+  </span>
 
 </div>
 
 
-<div class="menu-grid">
-
-
-<a
-  href="ranking.html"
-  class="menu-card"
->
-
-  <div class="menu-icon">
-    👑
-  </div>
-
-  <h3>
-    キャラランク
-  </h3>
-
-  <p>
-    現環境で強いキャラクターを
-    SS〜Bまでランキング！
-  </p>
-
-</a>
-
-
-
-<a
-  href="#"
-  class="menu-card"
->
-
-  <div class="menu-icon">
-    ⚔️
-  </div>
-
-  <h3>
-    キャラ攻略
-  </h3>
-
-  <p>
-    各キャラクターの性能や
-    おすすめの使い方を紹介。
-  </p>
-
-</a>
-
-
-
-<a
-  href="#"
-  class="menu-card"
->
-
-  <div class="menu-icon">
-    🧩
-  </div>
-
-  <h3>
-    おすすめ編成
-  </h3>
-
-  <p>
-    PVPで活躍する組み合わせを
-    徹底紹介！
-  </p>
-
-</a>
-
-
-
-<a
-  href="#"
-  class="menu-card"
->
-
-  <div class="menu-icon">
-    🌟
-  </div>
-
-  <h3>
-    初心者攻略
-  </h3>
-
-  <p>
-    初心者が最初に知っておきたい
-    基本情報をまとめています。
-  </p>
-
-</a>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     注目キャラ
-========================= -->
-
-<section class="section">
-
-<div class="container">
-
-
-<div class="section-title">
-
-  <h2>
-    👑 今注目のキャラクター
-  </h2>
-
-  <p>
-    CURRENT META
-  </p>
-
-</div>
-
-
-<div class="feature">
-
-
-<div class="feature-card">
-
-  <div class="feature-rank">
-    SS RANK
-  </div>
-
-  <h3>
-    ザクロ味クッキー
-  </h3>
-
-  <p>
-    高い火力と機動力を持つ
-    現環境注目のアタッカー。
-  </p>
-
-  <div class="score">
-    ⭐ 10.0 / 10
-  </div>
-
-</div>
-
-
-
-<div class="feature-card">
-
-  <div class="feature-rank">
-    SS RANK
-  </div>
-
-  <h3>
-    名もなきわんケーキ
-  </h3>
-
-  <p>
-    爆発力のある攻撃性能が魅力。
-    PVPでも活躍しやすいキャラクター。
-  </p>
-
-  <div class="score">
-    ⭐ 9.8 / 10
-  </div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     最新情報
-========================= -->
-
-<section class="section">
-
-<div class="container">
-
-
-<div class="section-title">
-
-  <h2>
-    📰 最新情報
-  </h2>
-
-  <p>
-    NEWS
-  </p>
-
-</div>
-
-
-<div class="news">
+<div class="news-list">
 
 
 <div class="news-item">
@@ -1061,11 +1071,23 @@ footer {
   </div>
 
   <div class="news-text">
-    キャラクターランキングを更新しました！
+    クッキーランキングを更新しました。
   </div>
 
 </div>
 
+
+<div class="news-item">
+
+  <div class="news-date">
+    2026.08.12
+  </div>
+
+  <div class="news-text">
+    クランブル徹底攻略サイトを更新しました！
+  </div>
+
+</div>
 
 
 <div class="news-item">
@@ -1075,34 +1097,232 @@ footer {
   </div>
 
   <div class="news-text">
-    クランブル徹底攻略サイトをオープン！
+    新しいキャラクター情報を追加しました。
   </div>
 
 </div>
 
-
-
-<div class="news-item">
-
-  <div class="news-date">
-    2026.08.10
-  </div>
-
-  <div class="news-text">
-    キャラクター攻略情報を追加しました。
-  </div>
-
-</div>
-
-
-</div>
 
 </div>
 
 </section>
 
 
-</main>
+
+<!-- =========================
+     攻略コンテンツ
+========================= -->
+
+<section class="contents">
+
+<div class="section-title">
+
+  <h2>
+    🔥 攻略コンテンツ
+  </h2>
+
+  <span>
+    CRUMBLE GUIDE
+  </span>
+
+</div>
+
+
+<div class="contents-grid">
+
+
+<!-- 更新情報 -->
+
+<a
+  href="#news"
+  class="content-card"
+>
+
+  <div class="card-icon">
+    📰
+  </div>
+
+  <h3>
+    更新情報
+  </h3>
+
+  <p>
+    サイトの最新更新や
+    新しく追加された攻略情報を紹介。
+  </p>
+
+</a>
+
+
+
+<!-- クッキーランキング -->
+
+<a
+  href="ranking.html"
+  class="content-card"
+>
+
+  <div class="card-icon">
+    👑
+  </div>
+
+  <h3>
+    クッキーランキング
+  </h3>
+
+  <p>
+    PVPで活躍するクッキーを
+    SS〜Bランクで評価！
+  </p>
+
+</a>
+
+
+
+<!-- 個別紹介 -->
+
+<a
+  href="#characters"
+  class="content-card"
+>
+
+  <div class="card-icon">
+    🍪
+  </div>
+
+  <h3>
+    クッキー個別紹介
+  </h3>
+
+  <p>
+    各クッキーの性能や特徴、
+    おすすめの使い方を紹介。
+  </p>
+
+</a>
+
+
+
+<!-- アリーナ -->
+
+<a
+  href="#arena"
+  class="content-card"
+>
+
+  <div class="card-icon">
+    ⚔️
+  </div>
+
+  <h3>
+    アリーナ攻略
+  </h3>
+
+  <p>
+    PVPで勝つための編成や
+    立ち回りを徹底解説。
+  </p>
+
+</a>
+
+
+
+<!-- メインステージ -->
+
+<a
+  href="#stage"
+  class="content-card"
+>
+
+  <div class="card-icon">
+    🗺️
+  </div>
+
+  <h3>
+    メインステージ攻略
+  </h3>
+
+  <p>
+    ステージ攻略やおすすめ編成を
+    分かりやすく紹介。
+  </p>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ダミーの移動先
+========================= -->
+
+<section
+  class="contents"
+  id="characters"
+>
+
+<div class="section-title">
+
+  <h2>
+    🍪 クッキー個別紹介
+  </h2>
+
+</div>
+
+<p>
+  キャラクター紹介ページを
+  ここから追加していく予定です。
+</p>
+
+</section>
+
+
+
+<section
+  class="contents"
+  id="arena"
+>
+
+<div class="section-title">
+
+  <h2>
+    ⚔️ アリーナ攻略
+  </h2>
+
+</div>
+
+<p>
+  アリーナ攻略ページを
+  ここから追加していく予定です。
+</p>
+
+</section>
+
+
+
+<section
+  class="contents"
+  id="stage"
+>
+
+<div class="section-title">
+
+  <h2>
+    🗺️ メインステージ攻略
+  </h2>
+
+</div>
+
+<p>
+  メインステージ攻略ページを
+  ここから追加していく予定です。
+</p>
+
+</section>
 
 
 
@@ -1112,8 +1332,12 @@ footer {
 
 <footer>
 
-  © 2026 クランブル徹底攻略
-  ｜ 非公式攻略サイト
+  🍪 クランブル徹底攻略
+
+  <br><br>
+
+  クッキーラン クランブル
+  非公式攻略サイト
 
 </footer>
 
