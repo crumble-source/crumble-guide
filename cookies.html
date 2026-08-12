@@ -1,1 +1,2519 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>クッキー個別紹介 | クランブル徹底攻略</title>
+
+
+<style>
+
+/* =================================
+   基本設定
+================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Noto Sans JP",
+    "Yu Gothic",
+    sans-serif;
+
+  color: #24445a;
+
+  background:
+    linear-gradient(
+      180deg,
+      #e9fbff 0%,
+      #d7f5fb 50%,
+      #c9eef6 100%
+    );
+
+  min-height: 100vh;
+
+}
+
+
+/* =================================
+   ヘッダー
+================================= */
+
+header {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  background:
+    rgba(255,255,255,.9);
+
+  backdrop-filter:
+    blur(15px);
+
+  border-bottom:
+    1px solid #a8dce8;
+
+  box-shadow:
+    0 4px 20px
+    rgba(51,150,175,.12);
+
+}
+
+
+.header-inner {
+
+  width:
+    min(1200px,94%);
+
+  min-height:
+    72px;
+
+  margin:
+    auto;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    15px;
+
+}
+
+
+.logo {
+
+  text-decoration:
+    none;
+
+  color:
+    #167a9a;
+
+  font-size:
+    21px;
+
+  font-weight:
+    900;
+
+  white-space:
+    nowrap;
+
+}
+
+
+.logo span {
+
+  color:
+    #45b9d4;
+
+}
+
+
+nav {
+
+  display:
+    flex;
+
+  gap:
+    5px;
+
+  overflow-x:
+    auto;
+
+}
+
+
+nav a {
+
+  text-decoration:
+    none;
+
+  color:
+    #416477;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  padding:
+    10px 12px;
+
+  border-radius:
+    11px;
+
+  white-space:
+    nowrap;
+
+}
+
+
+nav a:hover {
+
+  background:
+    #d9f5fa;
+
+  color:
+    #087c9f;
+
+}
+
+
+nav .active {
+
+  color:
+    white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55c8df,
+      #3aa5c4
+    );
+
+}
+
+
+/* =================================
+   タイトル
+================================= */
+
+.page-title {
+
+  width:
+    min(1100px,92%);
+
+  margin:
+    auto;
+
+  text-align:
+    center;
+
+  padding:
+    55px 0 30px;
+
+}
+
+
+.page-title .small {
+
+  color:
+    #50a7bf;
+
+  font-size:
+    13px;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    2px;
+
+}
+
+
+.page-title h1 {
+
+  color:
+    #167a9a;
+
+  font-size:
+    clamp(32px,6vw,52px);
+
+  margin:
+    8px 0;
+
+}
+
+
+.page-title p {
+
+  color:
+    #648494;
+
+  font-size:
+    14px;
+
+}
+
+
+/* =================================
+   検索
+================================= */
+
+.search-area {
+
+  width:
+    min(850px,92%);
+
+  margin:
+    auto;
+
+}
+
+
+.search-box {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  padding:
+    8px 15px;
+
+  background:
+    rgba(255,255,255,.9);
+
+  border:
+    2px solid #b7e3ec;
+
+  border-radius:
+    18px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(55,150,170,.1);
+
+}
+
+
+.search-icon {
+
+  font-size:
+    20px;
+
+}
+
+
+.search-box input {
+
+  width:
+    100%;
+
+  border:
+    none;
+
+  outline:
+    none;
+
+  background:
+    transparent;
+
+  color:
+    #24445a;
+
+  font-size:
+    16px;
+
+  padding:
+    12px 5px;
+
+}
+
+
+.search-box input::placeholder {
+
+  color:
+    #8aa7b2;
+
+}
+
+
+/* =================================
+   カテゴリ
+================================= */
+
+.category-area {
+
+  width:
+    min(1000px,92%);
+
+  margin:
+    18px auto 30px;
+
+  display:
+    flex;
+
+  gap:
+    8px;
+
+  overflow-x:
+    auto;
+
+}
+
+
+.category {
+
+  border:
+    1px solid #a9dce7;
+
+  background:
+    rgba(255,255,255,.7);
+
+  color:
+    #528091;
+
+  border-radius:
+    999px;
+
+  padding:
+    9px 16px;
+
+  font-size:
+    12px;
+
+  font-weight:
+    800;
+
+  white-space:
+    nowrap;
+
+  cursor:
+    pointer;
+
+  transition:
+    .2s;
+
+}
+
+
+.category:hover {
+
+  background:
+    #d9f6fa;
+
+}
+
+
+.category.active {
+
+  color:
+    white;
+
+  border-color:
+    transparent;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55c8df,
+      #3aa5c4
+    );
+
+}
+
+
+/* =================================
+   クッキー一覧
+================================= */
+
+.cookie-container {
+
+  width:
+    min(1100px,92%);
+
+  margin:
+    auto;
+
+  padding-bottom:
+    60px;
+
+}
+
+
+.cookie-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap:
+    18px;
+
+}
+
+
+/* =================================
+   カード
+================================= */
+
+.cookie-card {
+
+  background:
+    rgba(255,255,255,.88);
+
+  border:
+    1px solid #b8e3eb;
+
+  border-radius:
+    22px;
+
+  overflow:
+    hidden;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 12px 30px
+    rgba(52,145,167,.1);
+
+  transition:
+    .25s;
+
+}
+
+
+.cookie-card:hover {
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 18px 40px
+    rgba(52,145,167,.18);
+
+  border-color:
+    #72c9da;
+
+}
+
+
+/* =================================
+   キャラ画像
+================================= */
+
+.cookie-image {
+
+  height:
+    190px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d9f7fb,
+      #bcecf5
+    );
+
+  font-size:
+    70px;
+
+}
+
+
+/*
+  本物の画像を入れる場合は、
+
+  <img src="images/xxx.png">
+
+  に変更できます。
+*/
+
+
+.cookie-image img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    contain;
+
+}
+
+
+/* =================================
+   カード内容
+================================= */
+
+.cookie-info {
+
+  padding:
+    18px;
+
+}
+
+
+.cookie-rank {
+
+  display:
+    inline-block;
+
+  padding:
+    5px 10px;
+
+  border-radius:
+    8px;
+
+  color:
+    white;
+
+  font-size:
+    11px;
+
+  font-weight:
+    1000;
+
+}
+
+
+.rank-SS {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffc928,
+      #ff8b26
+    );
+
+}
+
+
+.rank-S {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ef77ff,
+      #a15cff
+    );
+
+}
+
+
+.rank-A {
+
+  background:
+    linear-gradient(
+      135deg,
+      #4e9dff,
+      #4b6cff
+    );
+
+}
+
+
+.rank-B {
+
+  background:
+    linear-gradient(
+      135deg,
+      #63c9d8,
+      #43a6ba
+    );
+
+}
+
+
+.cookie-name {
+
+  margin-top:
+    10px;
+
+  color:
+    #206f88;
+
+  font-size:
+    19px;
+
+  font-weight:
+    900;
+
+}
+
+
+.cookie-role {
+
+  margin-top:
+    5px;
+
+  color:
+    #7893a0;
+
+  font-size:
+    12px;
+
+}
+
+
+.cookie-score {
+
+  margin-top:
+    12px;
+
+  color:
+    #348fa8;
+
+  font-weight:
+    1000;
+
+}
+
+
+/* =================================
+   詳細モーダル
+================================= */
+
+.modal {
+
+  position:
+    fixed;
+
+  inset:
+    0;
+
+  z-index:
+    2000;
+
+  display:
+    none;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    20px;
+
+  background:
+    rgba(20,80,100,.45);
+
+  backdrop-filter:
+    blur(7px);
+
+}
+
+
+.modal.show {
+
+  display:
+    flex;
+
+}
+
+
+.modal-content {
+
+  width:
+    min(850px,100%);
+
+  max-height:
+    90vh;
+
+  overflow-y:
+    auto;
+
+  background:
+    #f7feff;
+
+  border:
+    1px solid #a9dce7;
+
+  border-radius:
+    28px;
+
+  box-shadow:
+    0 30px 80px
+    rgba(20,100,120,.25);
+
+}
+
+
+.modal-header {
+
+  position:
+    relative;
+
+  padding:
+    30px;
+
+  text-align:
+    center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c8f1f7,
+      #eafcff
+    );
+
+}
+
+
+.close {
+
+  position:
+    absolute;
+
+  top:
+    15px;
+
+  right:
+    18px;
+
+  width:
+    38px;
+
+  height:
+    38px;
+
+  border:
+    none;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255,255,255,.75);
+
+  color:
+    #4d7e8e;
+
+  font-size:
+    20px;
+
+  cursor:
+    pointer;
+
+}
+
+
+.detail-image {
+
+  font-size:
+    80px;
+
+  margin-bottom:
+    12px;
+
+}
+
+
+.modal-header h2 {
+
+  color:
+    #176f8b;
+
+  font-size:
+    28px;
+
+}
+
+
+.detail-rank {
+
+  margin-top:
+    8px;
+
+  color:
+    #4c8da0;
+
+  font-weight:
+    800;
+
+}
+
+
+/* =================================
+   詳細内容
+================================= */
+
+.detail-body {
+
+  padding:
+    25px;
+
+}
+
+
+.detail-section {
+
+  margin-bottom:
+    25px;
+
+}
+
+
+.detail-section h3 {
+
+  color:
+    #19718d;
+
+  margin-bottom:
+    12px;
+
+  font-size:
+    18px;
+
+}
+
+
+.detail-section p {
+
+  color:
+    #648494;
+
+  line-height:
+    1.8;
+
+  font-size:
+    14px;
+
+}
+
+
+/* =================================
+   評価
+================================= */
+
+.evaluation {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    12px;
+
+}
+
+
+.evaluation-box {
+
+  padding:
+    15px;
+
+  border-radius:
+    15px;
+
+  background:
+    #e8f9fc;
+
+  border:
+    1px solid #c2e8ef;
+
+}
+
+
+.evaluation-box span {
+
+  display:
+    block;
+
+  color:
+    #7895a0;
+
+  font-size:
+    11px;
+
+}
+
+
+.evaluation-box strong {
+
+  display:
+    block;
+
+  margin-top:
+    5px;
+
+  color:
+    #318da5;
+
+  font-size:
+    20px;
+
+}
+
+
+/* =================================
+   ステータス
+================================= */
+
+.stats {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    13px;
+
+}
+
+
+.stat {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    90px 1fr 45px;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+}
+
+
+.stat-name {
+
+  color:
+    #557d8b;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+}
+
+
+.bar {
+
+  height:
+    10px;
+
+  background:
+    #d8edf1;
+
+  border-radius:
+    999px;
+
+  overflow:
+    hidden;
+
+}
+
+
+.bar-inner {
+
+  height:
+    100%;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #55c8df,
+      #3aa5c4
+    );
+
+}
+
+
+.stat-value {
+
+  color:
+    #318da5;
+
+  font-weight:
+    900;
+
+  font-size:
+    12px;
+
+}
+
+
+/* =================================
+   強い点・弱い点
+================================= */
+
+.good-bad {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    15px;
+
+}
+
+
+.good,
+.bad {
+
+  padding:
+    18px;
+
+  border-radius:
+    17px;
+
+}
+
+
+.good {
+
+  background:
+    #e6f9ee;
+
+  border:
+    1px solid #b8e6ca;
+
+}
+
+
+.bad {
+
+  background:
+    #fff0f0;
+
+  border:
+    1px solid #f0caca;
+
+}
+
+
+.good h4 {
+
+  color:
+    #38966a;
+
+  margin-bottom:
+    10px;
+
+}
+
+
+.bad h4 {
+
+  color:
+    #c26c6c;
+
+  margin-bottom:
+    10px;
+
+}
+
+
+.good li,
+.bad li {
+
+  margin:
+    6px 0;
+
+  margin-left:
+    18px;
+
+  font-size:
+    13px;
+
+  color:
+    #637d87;
+
+}
+
+
+/* =================================
+   フッター
+================================= */
+
+footer {
+
+  padding:
+    40px;
+
+  text-align:
+    center;
+
+  background:
+    rgba(255,255,255,.7);
+
+  border-top:
+    1px solid #b8e3eb;
+
+  color:
+    #6c919f;
+
+  font-size:
+    12px;
+
+}
+
+
+/* =================================
+   スマホ
+================================= */
+
+@media(max-width:800px) {
+
+  .header-inner {
+
+    flex-direction:
+      column;
+
+    padding:
+      12px 0;
+
+  }
+
+
+  .cookie-grid {
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+}
+
+
+@media(max-width:550px) {
+
+  .cookie-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .evaluation {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .good-bad {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .stat {
+
+    grid-template-columns:
+      80px 1fr 40px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     ヘッダー
+================================= -->
+
+<header>
+
+<div class="header-inner">
+
+
+<a
+  href="index.html"
+  class="logo"
+>
+
+🍪 クランブル
+<span>徹底攻略</span>
+
+</a>
+
+
+<nav>
+
+<a href="index.html">
+🏠 トップ
+</a>
+
+
+<a href="ranking.html">
+👑 ランキング
+</a>
+
+
+<a
+  href="cookies.html"
+  class="active"
+>
+🍪 個別紹介
+</a>
+
+
+<a href="#">
+⚔️ アリーナ
+</a>
+
+
+<a href="#">
+🗺️ ステージ
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =================================
+     タイトル
+================================= -->
+
+<section class="page-title">
+
+<div class="small">
+COOKIE DATABASE
+</div>
+
+<h1>
+🍪 クッキー個別紹介
+</h1>
+
+<p>
+クッキーの性能・評価・特徴を詳しくチェック！
+</p>
+
+</section>
+
+
+
+<!-- =================================
+     検索
+================================= -->
+
+<section class="search-area">
+
+<div class="search-box">
+
+<div class="search-icon">
+🔍
+</div>
+
+<input
+  type="text"
+  id="searchInput"
+  placeholder="クッキー名を検索..."
+>
+
+</div>
+
+</section>
+
+
+
+<!-- =================================
+     カテゴリ
+================================= -->
+
+<div class="category-area">
+
+
+<button
+  class="category active"
+  onclick="filterCookies('all', this)"
+>
+すべて
+</button>
+
+
+<button
+  class="category"
+  onclick="filterCookies('アタッカー', this)"
+>
+⚔️ アタッカー
+</button>
+
+
+<button
+  class="category"
+  onclick="filterCookies('サポート', this)"
+>
+💚 サポート
+</button>
+
+
+<button
+  class="category"
+  onclick="filterCookies('タンク', this)"
+>
+🛡️ タンク
+</button>
+
+
+<button
+  class="category"
+  onclick="filterCookies('バランス', this)"
+>
+⚡ バランス
+</button>
+
+
+</div>
+
+
+
+<!-- =================================
+     クッキー一覧
+================================= -->
+
+<main class="cookie-container">
+
+<div
+  class="cookie-grid"
+  id="cookieGrid"
+>
+
+
+<!-- ザクロ -->
+
+<div
+  class="cookie-card"
+  data-name="ザクロ味クッキー"
+  data-role="アタッカー"
+  onclick="openCookie('zakuro')"
+>
+
+<div class="cookie-image">
+
+🍪
+
+</div>
+
+<div class="cookie-info">
+
+<span class="cookie-rank rank-SS">
+SS
+</span>
+
+<div class="cookie-name">
+ザクロ味クッキー
+</div>
+
+<div class="cookie-role">
+⚔️ アタッカー
+</div>
+
+<div class="cookie-score">
+⭐ 10.0 / 10
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- 名もなきわんケーキ -->
+
+<div
+  class="cookie-card"
+  data-name="名もなきわんケーキ"
+  data-role="アタッカー"
+  onclick="openCookie('wan')"
+>
+
+<div class="cookie-image">
+
+🍰
+
+</div>
+
+<div class="cookie-info">
+
+<span class="cookie-rank rank-SS">
+SS
+</span>
+
+<div class="cookie-name">
+名もなきわんケーキ
+</div>
+
+<div class="cookie-role">
+⚔️ アタッカー
+</div>
+
+<div class="cookie-score">
+⭐ 9.8 / 10
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ハーブ -->
+
+<div
+  class="cookie-card"
+  data-name="ハーブ味クッキー"
+  data-role="サポート"
+  onclick="openCookie('herb')"
+>
+
+<div class="cookie-image">
+
+🌿
+
+</div>
+
+<div class="cookie-info">
+
+<span class="cookie-rank rank-S">
+S
+</span>
+
+<div class="cookie-name">
+ハーブ味クッキー
+</div>
+
+<div class="cookie-role">
+💚 サポート
+</div>
+
+<div class="cookie-score">
+⭐ 9.3 / 10
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ミルキーウェイ -->
+
+<div
+  class="cookie-card"
+  data-name="ミルキーウェイ味クッキー"
+  data-role="サポート"
+  onclick="openCookie('milky')"
+>
+
+<div class="cookie-image">
+
+🌙
+
+</div>
+
+<div class="cookie-info">
+
+<span class="cookie-rank rank-S">
+S
+</span>
+
+<div class="cookie-name">
+ミルキーウェイ味クッキー
+</div>
+
+<div class="cookie-role">
+💚 サポート
+</div>
+
+<div class="cookie-score">
+⭐ 9.1 / 10
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- エスプレッソ -->
+
+<div
+  class="cookie-card"
+  data-name="エスプレッソ味クッキー"
+  data-role="バランス"
+  onclick="openCookie('espresso')"
+>
+
+<div class="cookie-image">
+
+☕
+
+</div>
+
+<div class="cookie-info">
+
+<span class="cookie-rank rank-B">
+B
+</span>
+
+<div class="cookie-name">
+エスプレッソ味クッキー
+</div>
+
+<div class="cookie-role">
+⚡ バランス
+</div>
+
+<div class="cookie-score">
+⭐ 7.5 / 10
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- オーブン放浪者 -->
+
+<div
+  class="cookie-card"
+  data-name="オーブン放浪者クッキー"
+  data-role="バランス"
+  onclick="openCookie('oven')"
+>
+
+<div class="cookie-image">
+
+🔥
+
+</div>
+
+<div class="cookie-info">
+
+<span class="cookie-rank rank-A">
+A
+</span>
+
+<div class="cookie-name">
+オーブン放浪者クッキー
+</div>
+
+<div class="cookie-role">
+⚡ バランス
+</div>
+
+<div class="cookie-score">
+⭐ 8.5 / 10
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+
+<!-- =================================
+     詳細モーダル
+================================= -->
+
+<div
+  class="modal"
+  id="cookieModal"
+>
+
+
+<div class="modal-content">
+
+
+<div class="modal-header">
+
+
+<button
+  class="close"
+  onclick="closeCookie()"
+>
+×
+</button>
+
+
+<div
+  class="detail-image"
+  id="detailImage"
+>
+🍪
+</div>
+
+
+<h2 id="detailName">
+クッキー
+</h2>
+
+
+<div
+  class="detail-rank"
+  id="detailRank"
+>
+SSランク
+</div>
+
+
+</div>
+
+
+
+<div class="detail-body">
+
+
+<!-- 評価 -->
+
+<section class="detail-section">
+
+<h3>
+⭐ 総合評価
+</h3>
+
+
+<div class="evaluation">
+
+
+<div class="evaluation-box">
+
+<span>
+PvP評価
+</span>
+
+<strong id="detailPvp">
+★★★★★
+</strong>
+
+</div>
+
+
+<div class="evaluation-box">
+
+<span>
+PvE評価
+</span>
+
+<strong id="detailPve">
+★★★★★
+</strong>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ステータス -->
+
+<section class="detail-section">
+
+<h3>
+📊 ステータス
+</h3>
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<div class="stat-name">
+⚔️ 攻撃力
+</div>
+
+<div class="bar">
+<div
+  class="bar-inner"
+  id="attackBar"
+></div>
+</div>
+
+<div
+  class="stat-value"
+  id="attackValue"
+>
+95
+</div>
+
+</div>
+
+
+
+<div class="stat">
+
+<div class="stat-name">
+🛡️ 耐久力
+</div>
+
+<div class="bar">
+<div
+  class="bar-inner"
+  id="defenseBar"
+></div>
+</div>
+
+<div
+  class="stat-value"
+  id="defenseValue"
+>
+88
+</div>
+
+</div>
+
+
+
+<div class="stat">
+
+<div class="stat-name">
+⚡ 機動力
+</div>
+
+<div class="bar">
+<div
+  class="bar-inner"
+  id="speedBar"
+></div>
+</div>
+
+<div
+  class="stat-value"
+  id="speedValue"
+>
+96
+</div>
+
+</div>
+
+
+
+<div class="stat">
+
+<div class="stat-name">
+🎯 操作性
+</div>
+
+<div class="bar">
+<div
+  class="bar-inner"
+  id="controlBar"
+></div>
+</div>
+
+<div
+  class="stat-value"
+  id="controlValue"
+>
+84
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- 説明 -->
+
+<section class="detail-section">
+
+<h3>
+📖 キャラクター紹介
+</h3>
+
+<p id="detailDescription">
+
+高い火力と機動力を持つ
+万能型アタッカー。
+PVPで特に強力な性能を発揮する。
+
+</p>
+
+</section>
+
+
+
+<!-- 強い・弱い -->
+
+<section class="detail-section">
+
+<div class="good-bad">
+
+
+<div class="good">
+
+<h4>
+👍 強い点
+</h4>
+
+<ul id="goodList">
+
+<li>高火力</li>
+
+<li>機動力が高い</li>
+
+<li>幅広い編成で活躍</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="bad">
+
+<h4>
+👎 弱い点
+</h4>
+
+<ul id="badList">
+
+<li>耐久面に注意</li>
+
+<li>操作に慣れが必要</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =================================
+     フッター
+================================= -->
+
+<footer>
+
+🍪 クランブル徹底攻略
+
+<br><br>
+
+クッキーラン クランブル
+非公式攻略サイト
+
+</footer>
+
+
+
+<script>
+
+/* =================================
+   クッキーデータ
+================================= */
+
+const cookies = {
+
+  zakuro: {
+
+    name:
+      "ザクロ味クッキー",
+
+    rank:
+      "SSランク",
+
+    image:
+      "🍪",
+
+    pvp:
+      "★★★★★",
+
+    pve:
+      "★★★★★",
+
+    attack:
+      95,
+
+    defense:
+      88,
+
+    speed:
+      96,
+
+    control:
+      84,
+
+    description:
+      "高い火力と機動力を持つ万能型アタッカー。PVPで特に強力な性能を発揮する。",
+
+    good: [
+      "高火力",
+      "機動力が高い",
+      "幅広い編成で活躍"
+    ],
+
+    bad: [
+      "耐久面に注意",
+      "操作に慣れが必要"
+    ]
+
+  },
+
+
+  wan: {
+
+    name:
+      "名もなきわんケーキ",
+
+    rank:
+      "SSランク",
+
+    image:
+      "🍰",
+
+    pvp:
+      "★★★★★",
+
+    pve:
+      "★★★★☆",
+
+    attack:
+      98,
+
+    defense:
+      78,
+
+    speed:
+      97,
+
+    control:
+      80,
+
+    description:
+      "非常に高い攻撃性能を持つアタッカー。短時間で大きなダメージを与えることが得意。",
+
+    good: [
+      "瞬間火力が高い",
+      "機動力が高い",
+      "PVPで強力"
+    ],
+
+    bad: [
+      "耐久力が低め",
+      "立ち回りが重要"
+    ]
+
+  },
+
+
+  herb: {
+
+    name:
+      "ハーブ味クッキー",
+
+    rank:
+      "Sランク",
+
+    image:
+      "🌿",
+
+    pvp:
+      "★★★★☆",
+
+    pve:
+      "★★★★★",
+
+    attack:
+      65,
+
+    defense:
+      85,
+
+    speed:
+      70,
+
+    control:
+      92,
+
+    description:
+      "味方をサポートする能力に優れたクッキー。長期戦で特に力を発揮する。",
+
+    good: [
+      "サポート性能が高い",
+      "安定した立ち回り",
+      "初心者にもおすすめ"
+    ],
+
+    bad: [
+      "火力は低め",
+      "単体では決定力に欠ける"
+    ]
+
+  },
+
+
+  milky: {
+
+    name:
+      "ミルキーウェイ味クッキー",
+
+    rank:
+      "Sランク",
+
+    image:
+      "🌙",
+
+    pvp:
+      "★★★★☆",
+
+    pve:
+      "★★★★☆",
+
+    attack:
+      78,
+
+    defense:
+      82,
+
+    speed:
+      88,
+
+    control:
+      90,
+
+    description:
+      "バランスの良い性能を持ち、さまざまな状況に対応できるクッキー。",
+
+    good: [
+      "バランスが良い",
+      "扱いやすい",
+      "編成の幅が広い"
+    ],
+
+    bad: [
+      "突出した性能が少ない"
+    ]
+
+  },
+
+
+  espresso: {
+
+    name:
+      "エスプレッソ味クッキー",
+
+    rank:
+      "Bランク",
+
+    image:
+      "☕",
+
+    pvp:
+      "★★★☆☆",
+
+    pve:
+      "★★★☆☆",
+
+    attack:
+      76,
+
+    defense:
+      60,
+
+    speed:
+      70,
+
+    control:
+      75,
+
+    description:
+      "範囲攻撃を得意とするバランス型クッキー。",
+
+    good: [
+      "範囲攻撃",
+      "複数の敵に対応"
+    ],
+
+    bad: [
+      "環境上位には及ばない",
+      "耐久力が低め"
+    ]
+
+  },
+
+
+  oven: {
+
+    name:
+      "オーブン放浪者クッキー",
+
+    rank:
+      "Aランク",
+
+    image:
+      "🔥",
+
+    pvp:
+      "★★★★☆",
+
+    pve:
+      "★★★★☆",
+
+    attack:
+      85,
+
+    defense:
+      76,
+
+    speed:
+      82,
+
+    control:
+      78,
+
+    description:
+      "攻撃・耐久・機動力のバランスが良い万能型クッキー。",
+
+    good: [
+      "バランスが良い",
+      "幅広い場面で活躍"
+    ],
+
+    bad: [
+      "専門型には性能で劣る"
+    ]
+
+  }
+
+};
+
+
+/* =================================
+   詳細を開く
+================================= */
+
+function openCookie(id) {
+
+  const cookie =
+    cookies[id];
+
+
+  document
+    .getElementById("detailImage")
+    .textContent =
+    cookie.image;
+
+
+  document
+    .getElementById("detailName")
+    .textContent =
+    cookie.name;
+
+
+  document
+    .getElementById("detailRank")
+    .textContent =
+    cookie.rank;
+
+
+  document
+    .getElementById("detailPvp")
+    .textContent =
+    cookie.pvp;
+
+
+  document
+    .getElementById("detailPve")
+    .textContent =
+    cookie.pve;
+
+
+  setStat(
+    "attack",
+    cookie.attack
+  );
+
+
+  setStat(
+    "defense",
+    cookie.defense
+  );
+
+
+  setStat(
+    "speed",
+    cookie.speed
+  );
+
+
+  setStat(
+    "control",
+    cookie.control
+  );
+
+
+  document
+    .getElementById("detailDescription")
+    .textContent =
+    cookie.description;
+
+
+  document
+    .getElementById("goodList")
+    .innerHTML =
+    cookie.good
+      .map(item => `<li>${item}</li>`)
+      .join("");
+
+
+  document
+    .getElementById("badList")
+    .innerHTML =
+    cookie.bad
+      .map(item => `<li>${item}</li>`)
+      .join("");
+
+
+  document
+    .getElementById("cookieModal")
+    .classList
+    .add("show");
+
+}
+
+
+/* =================================
+   ステータス設定
+================================= */
+
+function setStat(type, value) {
+
+  document
+    .getElementById(
+      type + "Bar"
+    )
+    .style.width =
+    value + "%";
+
+
+  document
+    .getElementById(
+      type + "Value"
+    )
+    .textContent =
+    value;
+
+}
+
+
+/* =================================
+   詳細を閉じる
+================================= */
+
+function closeCookie() {
+
+  document
+    .getElementById("cookieModal")
+    .classList
+    .remove("show");
+
+}
+
+
+/* =================================
+   モーダル外クリック
+================================= */
+
+document
+  .getElementById("cookieModal")
+  .addEventListener(
+    "click",
+    function(event) {
+
+      if (
+        event.target === this
+      ) {
+
+        closeCookie();
+
+      }
+
+    }
+  );
+
+
+/* =================================
+   検索
+================================= */
+
+document
+  .getElementById("searchInput")
+  .addEventListener(
+    "input",
+    function() {
+
+      const keyword =
+        this.value
+          .toLowerCase()
+          .trim();
+
+
+      document
+        .querySelectorAll(".cookie-card")
+        .forEach(card => {
+
+          const name =
+            card.dataset.name
+              .toLowerCase();
+
+
+          if (
+            name.includes(keyword)
+          ) {
+
+            card.style.display =
+              "";
+
+          } else {
+
+            card.style.display =
+              "none";
+
+          }
+
+        });
+
+    }
+  );
+
+
+/* =================================
+   カテゴリ検索
+================================= */
+
+function filterCookies(
+  category,
+  button
+) {
+
+
+  document
+    .querySelectorAll(".category")
+    .forEach(btn => {
+
+      btn.classList
+        .remove("active");
+
+    });
+
+
+  button.classList
+    .add("active");
+
+
+  document
+    .querySelectorAll(".cookie-card")
+    .forEach(card => {
+
+      if (
+        category === "all" ||
+        card.dataset.role === category
+      ) {
+
+        card.style.display =
+          "";
+
+      } else {
+
+        card.style.display =
+          "none";
+
+      }
+
+    });
+
+
+  document
+    .getElementById("searchInput")
+    .value =
+    "";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```
 
