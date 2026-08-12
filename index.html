@@ -2,630 +2,640 @@
 <html lang="ja">
 
 <head>
+<meta charset="UTF-8">
 
-    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<title>クランブル徹底攻略｜クッキーラン：クランブル攻略サイト</title>
 
-    <title>クランブル徹底攻略｜クッキーラン：クランブル攻略サイト</title>
+<meta name="description"
+content="クッキーラン：クランブルの最新情報、クッキーランキング、PVP・PVE攻略、クッキー・ペット一覧、ガチャ情報などを掲載する攻略サイト。">
 
-    <meta name="description"
-          content="クッキーラン：クランブルの最新情報、クッキーランキング、PVP・PVE攻略、クッキー・ペット一覧、ガチャ情報などを掲載する攻略サイト。">
+<style>
 
-    <style>
+/* =========================
+   基本
+========================= */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Hiragino Kaku Gothic ProN",
-                "Yu Gothic",
-                sans-serif;
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
 
-            background: #f4f5f7;
+    background: #eef8fc;
 
-            color: #222;
-        }
+    color: #24323a;
+}
 
 
-        /* =========================
-           ヘッダー
-        ========================= */
+/* =========================
+   ヘッダー
+========================= */
 
-        header {
+header {
 
-            background: #ffffff;
+    background: #ffffff;
 
-            border-bottom:
-                1px solid #e5e5e5;
+    border-bottom:
+        1px solid #cfe6ef;
 
-            position: sticky;
+    position: sticky;
 
-            top: 0;
+    top: 0;
 
-            z-index: 1000;
-        }
+    z-index: 1000;
+}
 
+.header-inner {
 
-        .header-inner {
+    max-width: 1200px;
 
-            max-width: 1200px;
+    margin: auto;
 
-            margin: auto;
+    padding: 15px 20px;
 
-            padding:
-                16px 20px;
+    display: flex;
 
-            display: flex;
+    align-items: center;
 
-            align-items: center;
+    justify-content: space-between;
 
-            justify-content: space-between;
+    gap: 20px;
+}
 
-            gap: 20px;
-        }
+.logo {
 
+    text-decoration: none;
 
-        .logo {
+    color: #1d607a;
 
-            text-decoration: none;
+    font-size: 21px;
 
-            color: #222;
+    font-weight: 900;
 
-            font-size: 21px;
+    white-space: nowrap;
+}
 
-            font-weight: 900;
+nav {
 
-            white-space: nowrap;
-        }
+    display: flex;
 
+    gap: 22px;
 
-        nav {
+    overflow-x: auto;
 
-            display: flex;
+    white-space: nowrap;
+}
 
-            gap: 22px;
+nav a {
 
-            overflow-x: auto;
+    color: #52727e;
 
-            white-space: nowrap;
-        }
+    text-decoration: none;
 
+    font-size: 13px;
 
-        nav a {
+    font-weight: bold;
+}
 
-            color: #555;
+nav a:hover {
 
-            text-decoration: none;
+    color: #1594c1;
+}
 
-            font-size: 13px;
 
-            font-weight: bold;
-        }
+/* =========================
+   メイン画像エリア
+========================= */
 
+.main-visual {
 
-        nav a:hover {
+    max-width: 1200px;
 
-            color: #ed6b1c;
-        }
+    margin: 25px auto 0;
 
+    padding: 0 20px;
+}
 
-        /* =========================
-           ヒーロー
-        ========================= */
+.main-visual-box {
 
-        .hero {
+    width: 100%;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #fff1df,
-                    #ffffff
-                );
+    min-height: 300px;
 
-            border-bottom:
-                1px solid #eeeeee;
-        }
+    border-radius: 15px;
 
+    overflow: hidden;
 
-        .hero-inner {
+    background:
+        linear-gradient(
+            135deg,
+            #bdeaf7,
+            #e9faff
+        );
 
-            max-width: 1200px;
+    border:
+        1px solid #c5e5ee;
 
-            margin: auto;
+    display: flex;
 
-            padding:
-                65px 20px;
+    align-items: center;
 
-            text-align: center;
-        }
+    justify-content: center;
 
+    position: relative;
+}
 
-        .hero-cookie {
 
-            font-size: 65px;
+/*
+   画像を入れたら
+   この部分に表示されます
+*/
 
-            margin-bottom: 12px;
-        }
+.main-visual-box img {
 
+    width: 100%;
 
-        .hero h1 {
+    height: 100%;
 
-            font-size: 44px;
+    min-height: 300px;
 
-            font-weight: 900;
+    object-fit: cover;
 
-            margin-bottom: 10px;
-        }
+    display: block;
+}
 
 
-        .hero h1 span {
+/*
+   画像がないときの表示
+*/
 
-            color: #ed6b1c;
-        }
+.main-visual-placeholder {
 
+    text-align: center;
 
-        .hero p {
+    color: #5d9bad;
 
-            color: #777;
+    padding: 30px;
+}
 
-            font-size: 14px;
+.main-visual-placeholder .icon {
 
-            line-height: 1.8;
-        }
+    font-size: 60px;
 
+    margin-bottom: 10px;
+}
 
-        /* =========================
-           メイン
-        ========================= */
+.main-visual-placeholder h2 {
 
-        main {
+    font-size: 22px;
 
-            max-width: 1200px;
+    margin-bottom: 8px;
+}
 
-            margin: auto;
+.main-visual-placeholder p {
 
-            padding:
-                45px 20px 80px;
-        }
+    font-size: 12px;
 
+    line-height: 1.7;
+}
 
-        /* =========================
-           セクションタイトル
-        ========================= */
 
-        .section-title {
+/* =========================
+   メイン
+========================= */
 
-            margin-bottom: 20px;
-        }
+main {
 
+    max-width: 1200px;
 
-        .section-title h2 {
+    margin: auto;
 
-            font-size: 25px;
+    padding: 35px 20px 80px;
+}
 
-            font-weight: 900;
-        }
 
+/* =========================
+   セクションタイトル
+========================= */
 
-        .section-title p {
+.section-title {
 
-            color: #999;
+    margin-bottom: 18px;
 
-            font-size: 12px;
+    border-left:
+        5px solid #38a8cf;
 
-            margin-top: 5px;
-        }
+    padding-left: 12px;
+}
 
+.section-title h2 {
 
-        /* =========================
-           最新情報
-        ========================= */
+    font-size: 24px;
 
-        .news-box {
+    color: #245b6e;
 
-            background: white;
+    font-weight: 900;
+}
 
-            border:
-                1px solid #e4e4e4;
+.section-title p {
 
-            border-radius: 10px;
+    color: #7895a0;
 
-            padding: 20px;
+    font-size: 12px;
 
-            margin-bottom: 45px;
-        }
+    margin-top: 4px;
+}
 
 
-        .news-item {
+/* =========================
+   最新情報
+========================= */
 
-            display: flex;
+.news-box {
 
-            gap: 20px;
+    background: #ffffff;
 
-            padding: 14px 0;
+    border:
+        1px solid #d4e8ef;
 
-            border-bottom:
-                1px solid #eeeeee;
-        }
+    border-radius: 10px;
 
+    padding: 20px;
 
-        .news-item:last-child {
+    margin-bottom: 45px;
 
-            border-bottom: none;
-        }
+    box-shadow:
+        0 3px 12px rgba(40,120,150,.05);
+}
 
+.news-item {
 
-        .news-date {
+    display: flex;
 
-            color: #999;
+    gap: 20px;
 
-            font-size: 11px;
+    padding: 14px 0;
 
-            white-space: nowrap;
-        }
+    border-bottom:
+        1px solid #e6f0f3;
+}
 
+.news-item:last-child {
 
-        .news-item a {
+    border-bottom: none;
+}
 
-            color: #333;
+.news-date {
 
-            text-decoration: none;
+    color: #7da2ae;
 
-            font-size: 13px;
+    font-size: 11px;
 
-            font-weight: bold;
-        }
+    white-space: nowrap;
+}
 
+.news-item a {
 
-        .news-item a:hover {
+    color: #315967;
 
-            color: #ed6b1c;
-        }
+    text-decoration: none;
 
+    font-size: 13px;
 
-        /* =========================
-           メニューグリッド
-        ========================= */
+    font-weight: bold;
+}
 
-        .menu-grid {
+.news-item a:hover {
 
-            display: grid;
+    color: #1594c1;
+}
 
-            grid-template-columns:
-                repeat(3, 1fr);
 
-            gap: 16px;
+/* =========================
+   ランキング
+========================= */
 
-            margin-bottom: 50px;
-        }
+.ranking-banner {
 
+    display: grid;
 
-        .menu-card {
+    grid-template-columns:
+        1fr 1fr;
 
-            position: relative;
+    gap: 15px;
 
-            min-height: 145px;
+    margin-bottom: 45px;
+}
 
-            padding: 24px;
+.ranking-card {
 
-            background: white;
+    min-height: 170px;
 
-            border:
-                1px solid #e3e3e3;
+    padding: 28px;
 
-            border-radius: 11px;
+    border-radius: 12px;
 
-            text-decoration: none;
+    text-decoration: none;
 
-            color: #222;
+    color: white;
 
-            overflow: hidden;
+    position: relative;
 
-            transition:
-                transform .2s,
-                box-shadow .2s;
-        }
+    overflow: hidden;
 
+    box-shadow:
+        0 5px 18px
+        rgba(30,110,140,.12);
 
-        .menu-card:hover {
+    transition:
+        transform .2s;
+}
 
-            transform:
-                translateY(-4px);
+.ranking-card:hover {
 
-            box-shadow:
-                0 10px 28px
-                rgba(0,0,0,.08);
-        }
+    transform:
+        translateY(-4px);
+}
 
+.ranking-card.pvp {
 
-        .menu-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #268fc0,
+            #55c3df
+        );
+}
 
-            font-size: 38px;
+.ranking-card.pve {
 
-            margin-bottom: 12px;
-        }
+    background:
+        linear-gradient(
+            135deg,
+            #3d7fa5,
+            #72c4dc
+        );
+}
 
+.big-icon {
 
-        .menu-card h3 {
+    font-size: 48px;
 
-            font-size: 17px;
+    margin-bottom: 7px;
+}
 
-            margin-bottom: 6px;
-        }
+.ranking-card h3 {
 
+    font-size: 23px;
 
-        .menu-card p {
+    margin-bottom: 7px;
+}
 
-            color: #888;
+.ranking-card p {
 
-            font-size: 11px;
+    font-size: 12px;
 
-            line-height: 1.6;
-        }
+    opacity: .95;
 
+    line-height: 1.6;
+}
 
-        .arrow {
+.ranking-arrow {
 
-            position: absolute;
+    position: absolute;
 
-            right: 18px;
+    right: 25px;
 
-            bottom: 15px;
+    bottom: 20px;
 
-            color: #ccc;
+    font-size: 25px;
+}
 
-            font-size: 18px;
-        }
 
+/* =========================
+   メニュー
+========================= */
 
-        /* =========================
-           ランキング特別バナー
-        ========================= */
+.menu-grid {
 
-        .ranking-banner {
+    display: grid;
 
-            display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
 
-            grid-template-columns:
-                1fr 1fr;
+    gap: 15px;
 
-            gap: 15px;
+    margin-bottom: 45px;
+}
 
-            margin-bottom: 50px;
-        }
+.menu-card {
 
+    min-height: 145px;
 
-        .ranking-card {
+    padding: 22px;
 
-            min-height: 170px;
+    background: #ffffff;
 
-            padding: 28px;
+    border:
+        1px solid #d5e8ee;
 
-            border-radius: 12px;
+    border-radius: 11px;
 
-            text-decoration: none;
+    text-decoration: none;
 
-            color: white;
+    color: #263f48;
 
-            position: relative;
+    position: relative;
 
-            overflow: hidden;
-        }
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
 
+.menu-card:hover {
 
-        .ranking-card.pvp {
+    transform:
+        translateY(-4px);
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #d84b45,
-                    #ef8b36
-                );
-        }
+    box-shadow:
+        0 10px 25px
+        rgba(30,120,150,.10);
+}
 
+.menu-icon {
 
-        .ranking-card.pve {
+    font-size: 36px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #3869a8,
-                    #54a7c9
-                );
-        }
+    margin-bottom: 10px;
+}
 
+.menu-card h3 {
 
-        .ranking-card .big-icon {
+    font-size: 16px;
 
-            font-size: 50px;
+    margin-bottom: 6px;
 
-            margin-bottom: 8px;
-        }
+    color: #285d70;
+}
 
+.menu-card p {
 
-        .ranking-card h3 {
+    color: #7c959e;
 
-            font-size: 24px;
+    font-size: 11px;
 
-            margin-bottom: 7px;
-        }
+    line-height: 1.6;
+}
 
+.arrow {
 
-        .ranking-card p {
+    position: absolute;
 
-            font-size: 12px;
+    right: 17px;
 
-            opacity: .9;
+    bottom: 14px;
 
-            line-height: 1.6;
-        }
+    color: #8fc5d5;
 
+    font-size: 18px;
+}
 
-        .ranking-arrow {
 
-            position: absolute;
+/* =========================
+   フッター
+========================= */
 
-            right: 25px;
+footer {
 
-            bottom: 20px;
+    background:
+        #194c61;
 
-            font-size: 25px;
-        }
+    color: white;
 
+    text-align: center;
 
-        /* =========================
-           フッター
-        ========================= */
+    padding:
+        45px 20px;
+}
 
-        footer {
+footer h2 {
 
-            background: #202020;
+    font-size: 20px;
 
-            color: white;
+    margin-bottom: 8px;
+}
 
-            text-align: center;
+footer p {
 
-            padding:
-                45px 20px;
-        }
+    color: #b6d4df;
 
+    font-size: 11px;
 
-        footer h2 {
+    margin-bottom: 15px;
+}
 
-            font-size: 20px;
+footer small {
 
-            margin-bottom: 8px;
-        }
+    color: #7fa7b6;
 
+    font-size: 10px;
+}
 
-        footer p {
 
-            color: #999;
+/* =========================
+   スマホ
+========================= */
 
-            font-size: 11px;
+@media (max-width: 750px) {
 
-            margin-bottom: 15px;
-        }
+    .header-inner {
 
+        flex-direction: column;
 
-        footer small {
+        align-items: flex-start;
+    }
 
-            color: #666;
+    nav {
 
-            font-size: 10px;
-        }
+        width: 100%;
+    }
 
+    .main-visual {
 
-        /* =========================
-           スマホ
-        ========================= */
+        margin-top: 15px;
+    }
 
-        @media (max-width: 750px) {
+    .main-visual-box {
 
+        min-height: 210px;
+    }
 
-            .header-inner {
+    .main-visual-box img {
 
-                flex-direction: column;
+        min-height: 210px;
+    }
 
-                align-items:
-                    flex-start;
-            }
+    .hero {
 
+        padding: 0;
+    }
 
-            nav {
+    .menu-grid {
 
-                width: 100%;
+        grid-template-columns:
+            1fr 1fr;
 
-                padding-bottom: 3px;
-            }
+        gap: 10px;
+    }
 
+    .menu-card {
 
-            .hero-inner {
+        min-height: 135px;
 
-                padding:
-                    50px 20px;
-            }
+        padding: 16px;
+    }
 
+    .menu-icon {
 
-            .hero h1 {
+        font-size: 30px;
+    }
 
-                font-size: 32px;
-            }
+    .menu-card h3 {
 
+        font-size: 14px;
+    }
 
-            .hero-cookie {
+    .menu-card p {
 
-                font-size: 55px;
-            }
+        font-size: 10px;
+    }
 
+    .ranking-banner {
 
-            .menu-grid {
+        grid-template-columns:
+            1fr;
+    }
 
-                grid-template-columns:
-                    1fr 1fr;
+    .news-item {
 
-                gap: 10px;
-            }
+        flex-direction:
+            column;
 
+        gap: 5px;
+    }
+}
 
-            .menu-card {
-
-                min-height: 135px;
-
-                padding: 17px;
-            }
-
-
-            .menu-icon {
-
-                font-size: 30px;
-            }
-
-
-            .menu-card h3 {
-
-                font-size: 14px;
-            }
-
-
-            .menu-card p {
-
-                font-size: 10px;
-            }
-
-
-            .ranking-banner {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            .ranking-card {
-
-                min-height: 145px;
-            }
-
-
-            .news-item {
-
-                flex-direction:
-                    column;
-
-                gap: 5px;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -639,78 +649,85 @@
 
 <header>
 
-    <div class="header-inner">
+<div class="header-inner">
 
-        <a
-            href="index.html"
-            class="logo">
+<a
+href="index.html"
+class="logo">
 
-            🍪 クランブル徹底攻略
+🍪 クランブル徹底攻略
 
-        </a>
+</a>
 
 
-        <nav>
+<nav>
 
-            <a href="index.html">
-                ホーム
-            </a>
+<a href="index.html">
+ホーム
+</a>
 
-            <a href="latest.html">
-                最新情報
-            </a>
+<a href="latest.html">
+最新情報
+</a>
 
-            <a href="ranking.html">
-                クッキーランキング
-            </a>
+<a href="ranking.html">
+クッキーランキング
+</a>
 
-            <a href="cookies.html">
-                クッキー一覧
-            </a>
+<a href="cookies.html">
+クッキー一覧
+</a>
 
-            <a href="pets.html">
-                ペット一覧
-            </a>
+<a href="pets.html">
+ペット一覧
+</a>
 
-        </nav>
+</nav>
 
-    </div>
+</div>
 
 </header>
 
 
 
 <!-- =========================
-     ヒーロー
+     メイン画像
 ========================= -->
 
-<section class="hero">
+<section class="main-visual">
 
-    <div class="hero-inner">
-
-        <div class="hero-cookie">
-            🍪
-        </div>
+<div class="main-visual-box">
 
 
-        <h1>
+<!--
+画像を使う場合は
+下のコメントを消してください。
 
-            <span>クランブル</span>徹底攻略
+<img
+src="images/main/main-visual.jpg"
+alt="クランブル徹底攻略 メインビジュアル">
+-->
 
-        </h1>
+
+<div class="main-visual-placeholder">
+
+<div class="icon">
+🍪
+</div>
+
+<h2>
+ここにメイン画像を表示
+</h2>
+
+<p>
+images/main/main-visual.jpg<br>
+に画像を入れると表示できます。
+</p>
+
+</div>
 
 
-        <p>
-
-            クッキーラン：クランブルを
-            とことん攻略！<br>
-
-            PVP・PVE・キャラクター・
-            ガチャ・育成情報まで徹底掲載！
-
-        </p>
-
-    </div>
+</div>
 
 </section>
 
@@ -725,13 +742,13 @@
 
 <div class="section-title">
 
-    <h2>
-        📰 最新情報
-    </h2>
+<h2>
+📰 最新情報
+</h2>
 
-    <p>
-        クランブルの最新ニュース・アップデート情報
-    </p>
+<p>
+クランブルの最新ニュース・アップデート情報
+</p>
 
 </div>
 
@@ -739,34 +756,34 @@
 <div class="news-box">
 
 
-    <div class="news-item">
+<div class="news-item">
 
-        <span class="news-date">
-            2026.08.12
-        </span>
+<span class="news-date">
+2026.08.12
+</span>
 
-        <a href="ranking.html">
+<a href="ranking.html">
 
-            PVPキャラランキングを更新しました
+PVPキャラランキングを更新しました
 
-        </a>
+</a>
 
-    </div>
+</div>
 
 
-    <div class="news-item">
+<div class="news-item">
 
-        <span class="news-date">
-            2026.08.12
-        </span>
+<span class="news-date">
+2026.08.12
+</span>
 
-        <a href="latest.html">
+<a href="latest.html">
 
-            クランブル徹底攻略を公開しました
+クランブル徹底攻略サイトを公開しました
 
-        </a>
+</a>
 
-    </div>
+</div>
 
 
 </div>
@@ -774,18 +791,18 @@
 
 
 <!-- =========================
-     クッキーランキング
+     ランキング
 ========================= -->
 
 <div class="section-title">
 
-    <h2>
-        🏆 クッキーランキング
-    </h2>
+<h2>
+🏆 クッキーランキング
+</h2>
 
-    <p>
-        PVP・PVEで強いクッキーをランキング形式で紹介
-    </p>
+<p>
+PVP・PVEで強いクッキーをランキング形式で紹介
+</p>
 
 </div>
 
@@ -793,52 +810,53 @@
 <div class="ranking-banner">
 
 
-    <a
-        href="ranking.html?mode=pvp"
-        class="ranking-card pvp">
+<a
+href="ranking.html?mode=pvp"
+class="ranking-card pvp">
 
-        <div class="big-icon">
-            ⚔️
-        </div>
+<div class="big-icon">
+⚔️
+</div>
 
-        <h3>
-            PVPランキング
-        </h3>
+<h3>
+PVPランキング
+</h3>
 
-        <p>
-            アリーナで活躍する
-            クッキーを徹底評価！
-        </p>
+<p>
+アリーナで活躍するクッキーを
+徹底評価！
+</p>
 
-        <div class="ranking-arrow">
-            →
-        </div>
+<div class="ranking-arrow">
+→
+</div>
 
-    </a>
+</a>
 
 
-    <a
-        href="ranking.html?mode=pve"
-        class="ranking-card pve">
 
-        <div class="big-icon">
-            🗺️
-        </div>
+<a
+href="ranking.html?mode=pve"
+class="ranking-card pve">
 
-        <h3>
-            PVEランキング
-        </h3>
+<div class="big-icon">
+🗺️
+</div>
 
-        <p>
-            メインステージなどで
-            活躍するクッキーを評価！
-        </p>
+<h3>
+PVEランキング
+</h3>
 
-        <div class="ranking-arrow">
-            →
-        </div>
+<p>
+メインステージなどで活躍する
+クッキーを評価！
+</p>
 
-    </a>
+<div class="ranking-arrow">
+→
+</div>
+
+</a>
 
 
 </div>
@@ -851,13 +869,13 @@
 
 <div class="section-title">
 
-    <h2>
-        📚 攻略メニュー
-    </h2>
+<h2>
+📚 攻略メニュー
+</h2>
 
-    <p>
-        クランブル攻略に役立つ情報をチェック
-    </p>
+<p>
+クランブル攻略に役立つ情報をチェック
+</p>
 
 </div>
 
@@ -865,315 +883,243 @@
 <div class="menu-grid">
 
 
-    <!-- クッキー一覧 -->
+<a href="cookies.html" class="menu-card">
 
-    <a
-        href="cookies.html"
-        class="menu-card">
+<div class="menu-icon">
+🍪
+</div>
 
-        <div class="menu-icon">
-            🍪
-        </div>
+<h3>
+クッキー一覧
+</h3>
 
-        <h3>
-            クッキー一覧
-        </h3>
+<p>
+全クッキーの性能・評価・役割をチェック。
+</p>
 
-        <p>
-            全クッキーの性能・評価・役割をチェック。
-        </p>
+<span class="arrow">→</span>
 
-        <span class="arrow">
-            →
-        </span>
+</a>
 
-    </a>
 
 
+<a href="pets.html" class="menu-card">
 
-    <!-- ペット一覧 -->
+<div class="menu-icon">
+🐾
+</div>
 
-    <a
-        href="pets.html"
-        class="menu-card">
+<h3>
+ペット一覧
+</h3>
 
-        <div class="menu-icon">
-            🐾
-        </div>
+<p>
+ペットの性能やおすすめを紹介。
+</p>
 
-        <h3>
-            ペット一覧
-        </h3>
+<span class="arrow">→</span>
 
-        <p>
-            ペットの性能やおすすめを紹介。
-        </p>
+</a>
 
-        <span class="arrow">
-            →
-        </span>
 
-    </a>
 
+<a href="main-stage.html" class="menu-card">
 
+<div class="menu-icon">
+🗺️
+</div>
 
-    <!-- メインステージ -->
+<h3>
+メインステージ攻略
+</h3>
 
-    <a
-        href="main-stage.html"
-        class="menu-card">
+<p>
+ステージ攻略やおすすめ編成を掲載。
+</p>
 
-        <div class="menu-icon">
-            🗺️
-        </div>
+<span class="arrow">→</span>
 
-        <h3>
-            メインステージ攻略
-        </h3>
+</a>
 
-        <p>
-            ステージ攻略やおすすめ編成を掲載。
-        </p>
 
-        <span class="arrow">
-            →
-        </span>
 
-    </a>
+<a href="arena.html" class="menu-card">
 
+<div class="menu-icon">
+🏟️
+</div>
 
+<h3>
+アリーナ攻略
+</h3>
 
-    <!-- アリーナ -->
+<p>
+PVPの編成・立ち回り・対策を攻略。
+</p>
 
-    <a
-        href="arena.html"
-        class="menu-card">
+<span class="arrow">→</span>
 
-        <div class="menu-icon">
-            🏟️
-        </div>
+</a>
 
-        <h3>
-            アリーナ攻略
-        </h3>
 
-        <p>
-            PVPの編成・立ち回り・対策を攻略。
-        </p>
 
-        <span class="arrow">
-            →
-        </span>
+<a href="cookie-gacha.html" class="menu-card">
 
-    </a>
+<div class="menu-icon">
+🎰
+</div>
 
+<h3>
+クッキーガチャ
+</h3>
 
+<p>
+クッキーガチャの情報をチェック。
+</p>
 
-    <!-- クッキーガチャ -->
+<span class="arrow">→</span>
 
-    <a
-        href="cookie-gacha.html"
-        class="menu-card">
+</a>
 
-        <div class="menu-icon">
-            🎰
-        </div>
 
-        <h3>
-            クッキーガチャ
-        </h3>
 
-        <p>
-            クッキーガチャの情報をチェック。
-        </p>
+<a href="pet-gacha.html" class="menu-card">
 
-        <span class="arrow">
-            →
-        </span>
+<div class="menu-icon">
+🐾
+</div>
 
-    </a>
+<h3>
+ペットガチャ
+</h3>
 
+<p>
+ペットガチャの情報を紹介。
+</p>
 
+<span class="arrow">→</span>
 
-    <!-- ペットガチャ -->
+</a>
 
-    <a
-        href="pet-gacha.html"
-        class="menu-card">
 
-        <div class="menu-icon">
-            🐾
-        </div>
 
-        <h3>
-            ペットガチャ
-        </h3>
+<a href="oven-gacha.html" class="menu-card">
 
-        <p>
-            ペットガチャのラインナップや情報。
-        </p>
+<div class="menu-icon">
+🔥
+</div>
 
-        <span class="arrow">
-            →
-        </span>
+<h3>
+オーブンガチャ
+</h3>
 
-    </a>
+<p>
+オーブンガチャの情報を紹介。
+</p>
 
+<span class="arrow">→</span>
 
+</a>
 
-    <!-- オーブンガチャ -->
 
-    <a
-        href="oven-gacha.html"
-        class="menu-card">
 
-        <div class="menu-icon">
-            🔥
-        </div>
+<a href="sugar-rune.html" class="menu-card">
 
-        <h3>
-            オーブンガチャ
-        </h3>
+<div class="menu-icon">
+💎
+</div>
 
-        <p>
-            オーブン関連のガチャ情報を紹介。
-        </p>
+<h3>
+シュガールーン
+</h3>
 
-        <span class="arrow">
-            →
-        </span>
+<p>
+効果や使い方を徹底攻略。
+</p>
 
-    </a>
+<span class="arrow">→</span>
 
+</a>
 
 
-    <!-- シュガールーン -->
 
-    <a
-        href="sugar-rune.html"
-        class="menu-card">
+<a href="gnome-lab.html" class="menu-card">
 
-        <div class="menu-icon">
-            💎
-        </div>
+<div class="menu-icon">
+🔬
+</div>
 
-        <h3>
-            シュガールーン
-        </h3>
+<h3>
+ノーム研究所
+</h3>
 
-        <p>
-            シュガールーンの効果や使い方を攻略。
-        </p>
+<p>
+研究所の機能やおすすめ強化を解説。
+</p>
 
-        <span class="arrow">
-            →
-        </span>
+<span class="arrow">→</span>
 
-    </a>
+</a>
 
 
 
-    <!-- ノーム研究所 -->
+<a href="plates.html" class="menu-card">
 
-    <a
-        href="gnome-lab.html"
-        class="menu-card">
+<div class="menu-icon">
+🪧
+</div>
 
-        <div class="menu-icon">
-            🔬
-        </div>
+<h3>
+プレート
+</h3>
 
-        <h3>
-            ノーム研究所
-        </h3>
+<p>
+プレートの情報や入手方法を紹介。
+</p>
 
-        <p>
-            研究所の機能やおすすめ強化を解説。
-        </p>
+<span class="arrow">→</span>
 
-        <span class="arrow">
-            →
-        </span>
+</a>
 
-    </a>
 
 
+<a href="latest.html" class="menu-card">
 
-    <!-- プレート -->
+<div class="menu-icon">
+📰
+</div>
 
-    <a
-        href="plates.html"
-        class="menu-card">
+<h3>
+最新情報
+</h3>
 
-        <div class="menu-icon">
-            🪧
-        </div>
+<p>
+アップデートやイベント情報を掲載。
+</p>
 
-        <h3>
-            プレート
-        </h3>
+<span class="arrow">→</span>
 
-        <p>
-            プレートの情報や入手方法を紹介。
-        </p>
+</a>
 
-        <span class="arrow">
-            →
-        </span>
 
-    </a>
 
+<a href="beginner.html" class="menu-card">
 
+<div class="menu-icon">
+💡
+</div>
 
-    <!-- 最新情報 -->
+<h3>
+初心者攻略
+</h3>
 
-    <a
-        href="latest.html"
-        class="menu-card">
+<p>
+序盤の進め方や育成方法を解説。
+</p>
 
-        <div class="menu-icon">
-            📰
-        </div>
+<span class="arrow">→</span>
 
-        <h3>
-            最新情報
-        </h3>
-
-        <p>
-            アップデートやイベント情報を掲載。
-        </p>
-
-        <span class="arrow">
-            →
-        </span>
-
-    </a>
-
-
-
-    <!-- 初心者攻略 -->
-
-    <a
-        href="beginner.html"
-        class="menu-card">
-
-        <div class="menu-icon">
-            💡
-        </div>
-
-        <h3>
-            初心者攻略
-        </h3>
-
-        <p>
-            序盤の進め方や育成方法を解説。
-        </p>
-
-        <span class="arrow">
-            →
-        </span>
-
-    </a>
+</a>
 
 
 </div>
@@ -1183,23 +1129,19 @@
 
 
 
-<!-- =========================
-     フッター
-========================= -->
-
 <footer>
 
-    <h2>
-        🍪 クランブル徹底攻略
-    </h2>
+<h2>
+🍪 クランブル徹底攻略
+</h2>
 
-    <p>
-        クッキーラン：クランブル攻略情報サイト
-    </p>
+<p>
+クッキーラン：クランブル攻略情報サイト
+</p>
 
-    <small>
-        © 2026 クランブル徹底攻略
-    </small>
+<small>
+© 2026 クランブル徹底攻略
+</small>
 
 </footer>
 
