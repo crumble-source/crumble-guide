@@ -5,9 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>クランブル徹底攻略｜キャラランク</title>
+<title>クランブル徹底攻略</title>
 
 <style>
+
+/* =========================
+   基本設定
+========================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,6 +20,7 @@
 }
 
 body {
+
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -22,437 +28,734 @@ body {
     sans-serif;
 
   color: white;
+
   min-height: 100vh;
 
   background:
-    radial-gradient(circle at 15% 15%, #6048ff55, transparent 30%),
-    radial-gradient(circle at 85% 25%, #00c8ff35, transparent 30%),
-    radial-gradient(circle at 50% 90%, #ff3db735, transparent 35%),
-    linear-gradient(135deg, #07091b, #121a3b, #080b20);
+
+    radial-gradient(
+      circle at 15% 20%,
+      #754cff55,
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 85% 25%,
+      #00d9ff35,
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 80%,
+      #ff4dbb25,
+      transparent 35%
+    ),
+
+    linear-gradient(
+      135deg,
+      #060817,
+      #111a3d,
+      #080b20
+    );
 
   overflow-x: hidden;
 }
 
-/* キラキラ背景 */
+
+/* =========================
+   背景の光
+========================= */
+
 body::before {
+
   content: "";
+
   position: fixed;
+
   inset: 0;
 
-  background-image:
-    radial-gradient(circle, #ffffff88 1px, transparent 1px);
-
-  background-size: 45px 45px;
-  opacity: .25;
-
   pointer-events: none;
+
+  background-image:
+
+    radial-gradient(
+      circle,
+      #ffffffaa 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  opacity: .18;
+
 }
 
-/* ヘッダー */
+
+/* =========================
+   共通
+========================= */
+
+.container {
+
+  width: min(1100px, 92%);
+
+  margin: auto;
+
+}
+
+
+/* =========================
+   ヘッダー
+========================= */
 
 header {
+
   position: sticky;
+
   top: 0;
+
   z-index: 100;
 
   padding: 18px 0;
 
-  background: rgba(7, 9, 27, .75);
+  background:
+    rgba(5, 7, 23, .78);
+
   backdrop-filter: blur(15px);
 
-  border-bottom: 1px solid #ffffff18;
+  border-bottom:
+    1px solid #ffffff15;
+
 }
 
-.container {
-  width: min(1100px, 92%);
-  margin: auto;
-}
 
 .nav {
+
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
 }
+
 
 .logo {
-  font-size: 21px;
+
+  font-size: 22px;
+
   font-weight: 900;
+
 }
+
 
 .logo span {
+
   color: #8c7cff;
+
 }
+
 
 nav a {
+
   color: #cdd4ff;
+
   text-decoration: none;
-  margin-left: 20px;
+
+  margin-left: 22px;
+
   font-size: 14px;
+
+  transition: .2s;
+
 }
+
 
 nav a:hover {
+
   color: white;
+
 }
 
-/* ヒーロー */
+
+/* =========================
+   ヒーロー
+========================= */
 
 .hero {
+
+  position: relative;
+
   text-align: center;
-  padding: 80px 20px 50px;
+
+  padding:
+    100px 20px 80px;
+
 }
 
-.badge {
+
+.hero-badge {
+
   display: inline-block;
 
-  padding: 8px 16px;
-  margin-bottom: 18px;
+  padding:
+    8px 17px;
+
+  margin-bottom: 20px;
 
   border-radius: 999px;
 
-  background: #8c7cff22;
-  border: 1px solid #9b8dff66;
+  background:
+    #8d7aff22;
 
-  color: #cfc8ff;
+  border:
+    1px solid #a496ff55;
+
+  color:
+    #d7d0ff;
+
   font-size: 13px;
+
 }
 
-h1 {
-  font-size: clamp(40px, 7vw, 72px);
-  font-weight: 950;
+
+.hero h1 {
+
+  font-size:
+    clamp(45px, 9vw, 82px);
+
+  font-weight: 1000;
+
+  line-height: 1.05;
+
 }
+
 
 .gradient {
+
   background:
+
     linear-gradient(
       90deg,
-      white,
-      #a99aff,
-      #5ee7ff
+      #ffffff,
+      #b7a8ff,
+      #65eaff
     );
 
   -webkit-background-clip: text;
+
   color: transparent;
+
 }
+
 
 .hero p {
+
   max-width: 680px;
-  margin: 20px auto;
 
-  color: #aeb8dc;
-  line-height: 1.8;
+  margin:
+    25px auto;
+
+  color:
+    #aeb8dc;
+
+  line-height: 1.9;
+
 }
 
-.update {
-  color: #747fa7;
-  font-size: 12px;
-}
 
-/* 検索 */
+/* =========================
+   メインボタン
+========================= */
 
-.controls {
+.hero-buttons {
+
   display: flex;
+
+  justify-content:
+    center;
+
   gap: 12px;
+
   flex-wrap: wrap;
 
-  padding: 15px;
-  margin-bottom: 30px;
+  margin-top: 30px;
 
-  background: #ffffff09;
-  border: 1px solid #ffffff14;
-  border-radius: 18px;
-
-  backdrop-filter: blur(15px);
 }
 
-input,
-select {
-  padding: 12px 15px;
 
-  border-radius: 12px;
-  border: 1px solid #ffffff18;
+.button {
 
-  background: #11162f;
+  display: inline-block;
+
+  padding:
+    14px 24px;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  font-weight: 800;
+
+  transition: .25s;
+
+}
+
+
+.button-main {
+
   color: white;
 
-  outline: none;
-}
+  background:
 
-input {
-  flex: 1;
-  min-width: 200px;
-}
-
-/* ランク */
-
-.rank {
-  padding: 20px;
-  margin-bottom: 22px;
-
-  border-radius: 24px;
-
-  background: #0c1028bb;
-  border: 1px solid #ffffff15;
-
-  backdrop-filter: blur(15px);
+    linear-gradient(
+      135deg,
+      #806cff,
+      #4c9cff
+    );
 
   box-shadow:
-    0 20px 60px #00000035;
+    0 10px 35px #6354ff44;
+
 }
 
-.rank-title {
+
+.button-sub {
+
+  color:
+    #d9ddff;
+
+  background:
+    #ffffff09;
+
+  border:
+    1px solid #ffffff18;
+
+}
+
+
+.button:hover {
+
+  transform:
+    translateY(-4px);
+
+}
+
+
+/* =========================
+   セクション
+========================= */
+
+.section {
+
+  padding:
+    35px 0;
+
+}
+
+
+.section-title {
+
   display: flex;
-  align-items: center;
-  gap: 15px;
 
-  margin-bottom: 18px;
+  justify-content:
+    space-between;
+
+  align-items:
+    end;
+
+  margin-bottom:
+    18px;
+
 }
 
-.rank-icon {
-  width: 58px;
-  height: 58px;
 
-  display: grid;
-  place-items: center;
+.section-title h2 {
 
-  border-radius: 17px;
+  font-size: 28px;
 
-  font-size: 25px;
-  font-weight: 1000;
 }
 
-.SS .rank-icon {
-  background: linear-gradient(135deg, #ffd43b, #ff7625);
-  box-shadow: 0 0 30px #ff9f3055;
+
+.section-title p {
+
+  color:
+    #747fa5;
+
+  font-size:
+    12px;
+
 }
 
-.S .rank-icon {
-  background: linear-gradient(135deg, #ff5f91, #a93cff);
-}
 
-.A .rank-icon {
-  background: linear-gradient(135deg, #44ddff, #5278ff);
-}
+/* =========================
+   メニューカード
+========================= */
 
-.B .rank-icon {
-  background: linear-gradient(135deg, #687695, #3f4967);
-}
+.menu-grid {
 
-.rank-title h2 {
-  font-size: 23px;
-}
-
-.rank-title p {
-  color: #858fb4;
-  font-size: 13px;
-}
-
-/* キャラカード */
-
-.cards {
   display: grid;
 
   grid-template-columns:
-    repeat(auto-fill, minmax(240px, 1fr));
+    repeat(
+      auto-fit,
+      minmax(240px, 1fr)
+    );
 
-  gap: 15px;
+  gap: 16px;
+
 }
 
-.card {
+
+.menu-card {
+
   position: relative;
 
   overflow: hidden;
 
-  padding: 16px;
+  padding: 25px;
 
-  border-radius: 20px;
+  min-height: 170px;
+
+  border-radius: 22px;
 
   background:
+
     linear-gradient(
       145deg,
       #ffffff12,
       #ffffff04
     );
 
-  border: 1px solid #ffffff14;
+  border:
+    1px solid #ffffff15;
+
+  text-decoration: none;
+
+  color: white;
 
   transition: .25s;
+
 }
 
-.card:hover {
-  transform: translateY(-6px);
 
-  border-color: #9585ff88;
+.menu-card:hover {
+
+  transform:
+    translateY(-7px);
+
+  border-color:
+    #9586ff88;
 
   box-shadow:
-    0 15px 40px #5745c944;
+    0 20px 50px #4e3dbb33;
+
 }
 
-/* キャラ画像 */
 
-.character-image {
-  height: 150px;
+.menu-icon {
 
-  margin-bottom: 15px;
+  font-size:
+    34px;
 
-  border-radius: 15px;
+  margin-bottom:
+    15px;
+
+}
+
+
+.menu-card h3 {
+
+  font-size:
+    20px;
+
+  margin-bottom:
+    8px;
+
+}
+
+
+.menu-card p {
+
+  color:
+    #929cbe;
+
+  font-size:
+    13px;
+
+  line-height:
+    1.7;
+
+}
+
+
+/* =========================
+   注目キャラ
+========================= */
+
+.feature {
 
   display: grid;
-  place-items: center;
 
-  color: #737da2;
+  grid-template-columns:
+    1fr 1fr;
 
-  background:
-    radial-gradient(
-      circle at center,
-      #ffffff15,
-      #ffffff03
-    );
+  gap: 20px;
+
 }
 
-.character-image img {
-  width: 100%;
-  height: 100%;
 
-  object-fit: contain;
+.feature-card {
 
-  border-radius: 15px;
-}
+  padding: 25px;
 
-/* キャラ名 */
-
-.character-name {
-  font-size: 19px;
-  font-weight: 900;
-}
-
-.character-role {
-  color: #8b96ba;
-  font-size: 12px;
-
-  margin: 5px 0 14px;
-}
-
-/* ステータス */
-
-.stats {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 8px;
-}
-
-.stat {
-  color: #8d97b8;
-  font-size: 11px;
-}
-
-.bar {
-  height: 5px;
-
-  margin-top: 5px;
-
-  background: #252b4b;
-
-  border-radius: 99px;
-
-  overflow: hidden;
-}
-
-.bar span {
-  display: block;
-
-  height: 100%;
-
-  border-radius: 99px;
+  border-radius: 22px;
 
   background:
     linear-gradient(
-      90deg,
-      #8170ff,
-      #55dfff
+      135deg,
+      #ffbf2b16,
+      #ffffff05
     );
+
+  border:
+    1px solid #ffcc4a30;
+
 }
 
-/* スコア */
+
+.feature-rank {
+
+  color:
+    #ffd45a;
+
+  font-size:
+    13px;
+
+  font-weight:
+    900;
+
+}
+
+
+.feature-card h3 {
+
+  font-size:
+    25px;
+
+  margin:
+    10px 0;
+
+}
+
+
+.feature-card p {
+
+  color:
+    #aab3d0;
+
+  line-height:
+    1.7;
+
+}
+
 
 .score {
-  margin-top: 14px;
 
-  text-align: right;
+  margin-top:
+    18px;
 
-  font-size: 17px;
-  font-weight: 900;
+  font-size:
+    24px;
 
-  color: #bcb2ff;
-}
-/* 注意書き */
+  font-weight:
+    900;
 
-.note {
-  margin: 30px 0;
+  color:
+    #c7bcff;
 
-  padding: 20px;
-
-  border-radius: 18px;
-
-  background: #ffc4430d;
-
-  border: 1px solid #ffc44322;
-
-  color: #c8cee2;
-
-  line-height: 1.7;
-
-  font-size: 13px;
 }
 
-/* フッター */
+
+/* =========================
+   最新情報
+========================= */
+
+.news {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    10px;
+
+}
+
+
+.news-item {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    15px;
+
+  padding:
+    16px;
+
+  border-radius:
+    15px;
+
+  background:
+    #ffffff07;
+
+  border:
+    1px solid #ffffff0e;
+
+}
+
+
+.news-date {
+
+  color:
+    #7782a6;
+
+  font-size:
+    12px;
+
+  min-width:
+    90px;
+
+}
+
+
+.news-text {
+
+  color:
+    #dce1ff;
+
+  font-size:
+    14px;
+
+}
+
+
+/* =========================
+   フッター
+========================= */
 
 footer {
-  padding: 50px 0 35px;
 
-  text-align: center;
+  text-align:
+    center;
 
-  color: #687394;
+  padding:
+    60px 0 35px;
 
-  font-size: 12px;
+  color:
+    #687394;
+
+  font-size:
+    12px;
+
 }
 
-/* スマホ */
 
-@media (max-width: 650px) {
+/* =========================
+   スマホ
+========================= */
+
+@media(max-width:700px) {
 
   nav {
-    display: none;
+
+    display:
+      none;
+
   }
+
 
   .hero {
-    padding-top: 50px;
+
+    padding-top:
+      65px;
+
   }
 
-  .cards {
-    grid-template-columns: 1fr;
+
+  .feature {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .news-item {
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      5px;
+
   }
 
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     ヘッダー
+========================= -->
 
 <header>
 
 <div class="container nav">
 
   <div class="logo">
-    🍪 クランブル<span>徹底攻略</span>
+
+    🍪 クランブル
+    <span>徹底攻略</span>
+
   </div>
 
+
   <nav>
-    <a href="#">ホーム</a>
-    <a href="#">キャラランク</a>
-    <a href="#">攻略情報</a>
-    <a href="#">最新情報</a>
+
+    <a href="index.html">
+      ホーム
+    </a>
+
+    <a href="ranking.html">
+      キャラランク
+    </a>
+
+    <a href="#">
+      攻略情報
+    </a>
+
+    <a href="#">
+      最新情報
+    </a>
+
   </nav>
 
 </div>
@@ -460,312 +763,363 @@ footer {
 </header>
 
 
-<main class="container">
+<!-- =========================
+     メイン
+========================= -->
+
+<main>
+
 
 <section class="hero">
 
-  <div class="badge">
-    ⚡ PVP META / CHARACTER RANKING
+  <div class="hero-badge">
+
+    ⚡ CRUMBLE攻略サイト
+
   </div>
+
 
   <h1>
+
     <span class="gradient">
-      最強キャラランキング
+
+      クランブル<br>
+      徹底攻略
+
     </span>
+
   </h1>
 
+
   <p>
-    クランブルの現環境を徹底分析！
-    火力・耐久・機動力・扱いやすさを
-    総合評価してランキング化。
+
+    キャラクターランキングから
+    最新攻略情報まで徹底解説！<br>
+
+    クランブルをもっと楽しむための
+    非公式攻略サイト。
+
   </p>
 
-  <div class="update">
-    最終更新：2026年8月12日
+
+  <div class="hero-buttons">
+
+    <a
+      href="ranking.html"
+      class="button button-main"
+    >
+
+      👑 キャラランクを見る
+
+    </a>
+
+
+    <a
+      href="#menu"
+      class="button button-sub"
+    >
+
+      📖 攻略情報を見る
+
+    </a>
+
   </div>
 
 </section>
 
 
-<!-- 検索 -->
 
-<section class="controls">
+<!-- =========================
+     メニュー
+========================= -->
 
-  <input
-    id="search"
-    type="text"
-    placeholder="🔎 キャラクターを検索..."
-  >
+<section
+  class="section"
+  id="menu"
+>
 
-  <select id="rankFilter">
+<div class="container">
 
-    <option value="ALL">
-      すべてのランク
-    </option>
 
-    <option value="SS">SSランク</option>
-    <option value="S">Sランク</option>
-    <option value="A">Aランク</option>
-    <option value="B">Bランク</option>
+<div class="section-title">
 
-  </select>
+  <h2>
+    🔥 攻略コンテンツ
+  </h2>
+
+  <p>
+    CRUMBLE GUIDE
+  </p>
+
+</div>
+
+
+<div class="menu-grid">
+
+
+<a
+  href="ranking.html"
+  class="menu-card"
+>
+
+  <div class="menu-icon">
+    👑
+  </div>
+
+  <h3>
+    キャラランク
+  </h3>
+
+  <p>
+    現環境で強いキャラクターを
+    SS〜Bまでランキング！
+  </p>
+
+</a>
+
+
+
+<a
+  href="#"
+  class="menu-card"
+>
+
+  <div class="menu-icon">
+    ⚔️
+  </div>
+
+  <h3>
+    キャラ攻略
+  </h3>
+
+  <p>
+    各キャラクターの性能や
+    おすすめの使い方を紹介。
+  </p>
+
+</a>
+
+
+
+<a
+  href="#"
+  class="menu-card"
+>
+
+  <div class="menu-icon">
+    🧩
+  </div>
+
+  <h3>
+    おすすめ編成
+  </h3>
+
+  <p>
+    PVPで活躍する組み合わせを
+    徹底紹介！
+  </p>
+
+</a>
+
+
+
+<a
+  href="#"
+  class="menu-card"
+>
+
+  <div class="menu-icon">
+    🌟
+  </div>
+
+  <h3>
+    初心者攻略
+  </h3>
+
+  <p>
+    初心者が最初に知っておきたい
+    基本情報をまとめています。
+  </p>
+
+</a>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<div id="ranking"></div>
+
+<!-- =========================
+     注目キャラ
+========================= -->
+
+<section class="section">
+
+<div class="container">
 
 
-<div class="note">
+<div class="section-title">
 
-💡 <strong>ランクの見方</strong><br>
+  <h2>
+    👑 今注目のキャラクター
+  </h2>
 
-SS：環境トップクラス<br>
-S：非常に強力<br>
-A：十分活躍できる<br>
-B：編成や使い方次第で活躍
+  <p>
+    CURRENT META
+  </p>
 
 </div>
+
+
+<div class="feature">
+
+
+<div class="feature-card">
+
+  <div class="feature-rank">
+    SS RANK
+  </div>
+
+  <h3>
+    ザクロ味クッキー
+  </h3>
+
+  <p>
+    高い火力と機動力を持つ
+    現環境注目のアタッカー。
+  </p>
+
+  <div class="score">
+    ⭐ 10.0 / 10
+  </div>
+
+</div>
+
+
+
+<div class="feature-card">
+
+  <div class="feature-rank">
+    SS RANK
+  </div>
+
+  <h3>
+    名もなきわんケーキ
+  </h3>
+
+  <p>
+    爆発力のある攻撃性能が魅力。
+    PVPでも活躍しやすいキャラクター。
+  </p>
+
+  <div class="score">
+    ⭐ 9.8 / 10
+  </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     最新情報
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+
+<div class="section-title">
+
+  <h2>
+    📰 最新情報
+  </h2>
+
+  <p>
+    NEWS
+  </p>
+
+</div>
+
+
+<div class="news">
+
+
+<div class="news-item">
+
+  <div class="news-date">
+    2026.08.12
+  </div>
+
+  <div class="news-text">
+    キャラクターランキングを更新しました！
+  </div>
+
+</div>
+
+
+
+<div class="news-item">
+
+  <div class="news-date">
+    2026.08.11
+  </div>
+
+  <div class="news-text">
+    クランブル徹底攻略サイトをオープン！
+  </div>
+
+</div>
+
+
+
+<div class="news-item">
+
+  <div class="news-date">
+    2026.08.10
+  </div>
+
+  <div class="news-text">
+    キャラクター攻略情報を追加しました。
+  </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
 
 </main>
 
 
+
+<!-- =========================
+     フッター
+========================= -->
+
 <footer>
 
-© クランブル徹底攻略 ｜ 非公式攻略サイト
+  © 2026 クランブル徹底攻略
+  ｜ 非公式攻略サイト
 
 </footer>
 
 
-<script>
-
-const characters = [
-
-  {
-    rank: "SS",
-    name: "ザクロ味クッキー",
-    role: "万能アタッカー",
-    score: "10.0",
-    stats: [95,88,96,84]
-  },
-
-  {
-    rank: "SS",
-    name: "名もなきわんケーキ",
-    role: "高火力・高機動",
-    score: "9.8",
-    stats: [98,78,97,80]
-  },
-
-  {
-    rank: "S",
-    name: "ハーブ味クッキー",
-    role: "サポート・回復",
-    score: "9.3",
-    stats: [76,94,80,91]
-  },
-
-  {
-    rank: "S",
-    name: "ミルキーウェイ味クッキー",
-    role: "コントロール",
-    score: "9.1",
-    stats: [84,87,82,86]
-  },
-
-  {
-    rank: "A",
-    name: "オーブン放浪者クッキー",
-    role: "バランス型",
-    score: "8.5",
-    stats: [83,81,79,88]
-  },
-
-  {
-    rank: "B",
-    name: "エスプレッソ味クッキー",
-    role: "範囲アタッカー",
-    score: "7.6",
-    stats: [88,65,68,74]
-  }
-
-];
-
-
-const rankInfo = {
-
-  SS: "環境トップクラス",
-  S: "非常に強力",
-  A: "十分活躍できる",
-  B: "編成次第で活躍"
-
-};
-
-
-const statNames = [
-  "🔥 火力",
-  "🛡️ 耐久",
-  "💨 機動力",
-  "🎯 扱いやすさ"
-];
-
-
-function renderRanking() {
-
-  const search =
-    document
-      .getElementById("search")
-      .value
-      .toLowerCase();
-
-  const filter =
-    document
-      .getElementById("rankFilter")
-      .value;
-
-
-  const container =
-    document.getElementById("ranking");
-
-
-  container.innerHTML = "";
-
-
-  ["SS","S","A","B"].forEach(rank => {
-
-    if (
-      filter !== "ALL" &&
-      filter !== rank
-    ) return;
-
-
-    const list =
-      characters.filter(character =>
-
-        character.rank === rank &&
-        character.name
-          .toLowerCase()
-          .includes(search)
-
-      );
-
-
-    if (list.length === 0) return;
-
-
-    const section =
-      document.createElement("section");
-
-    section.className =
-      `rank ${rank}`;
-
-
-    section.innerHTML = `
-
-      <div class="rank-title">
-
-        <div class="rank-icon">
-          ${rank}
-        </div>
-
-        <div>
-
-          <h2>
-            ${rankInfo[rank]}
-          </h2>
-
-          <p>
-            ${list.length}キャラクター
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="cards">
-
-        ${list.map(character => `
-
-          <article class="card">
-
-            <div class="character-image">
-              キャラクター画像
-            </div>
-
-            <div class="character-name">
-              ${character.name}
-            </div>
-
-            <div class="character-role">
-              ${character.role}
-            </div>
-
-
-            <div class="stats">
-
-              ${character.stats.map(
-                (value,index) => `
-
-                  <div class="stat">
-
-                    ${statNames[index]}
-
-                    <div class="bar">
-
-                      <span
-                        style="width:${value}%">
-                      </span>
-
-                    </div>
-
-                  </div>
-
-                `
-              ).join("")}
-
-            </div>
-
-
-            <div class="score">
-              ⭐ ${character.score} / 10
-            </div>
-
-          </article>
-
-        `).join("")}
-
-      </div>
-    `;
-
-
-    container.appendChild(section);
-
-  });
-
-}
-
-
-document
-  .getElementById("search")
-  .addEventListener(
-    "input",
-    renderRanking
-  );
-
-
-document
-  .getElementById("rankFilter")
-  .addEventListener(
-    "change",
-    renderRanking
-  );
-
-
-renderRanking();
-
-</script>
-
 </body>
+
 </html>
 ```
